@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { FC } from 'react'
+
+import IconsRight from './icons/IconsRight'
 
 const Header: FC = () => {
 	return (
@@ -11,17 +11,7 @@ const Header: FC = () => {
 					<img src='img/common/search.svg' alt='' />
 				</label>
 			</div>
-			<div className='icons_right'>
-				<Link href='#'>
-					<img src='img/common/plus.svg' alt='' />
-				</Link>
-				<Link href='#'>
-					<img src='img/common/review.svg' alt='' />
-				</Link>
-				<Link href='#'>
-					<img src='img/common/basket.svg' alt='' />
-				</Link>
-			</div>
+			<IconsRight />
 		</header>
 	)
 }

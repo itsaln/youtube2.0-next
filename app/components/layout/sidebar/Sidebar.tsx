@@ -4,8 +4,12 @@ import { FC } from 'react'
 
 import Line from '@/ui/Line'
 
+import { useAuth } from '@/hooks/useAuth'
+
 const Sidebar: FC = () => {
-	return (
+	const { user } = useAuth()
+
+	return user ? (
 		<section className='sidebar'>
 			<Link href='/' className='logo'>
 				<Image
@@ -122,7 +126,7 @@ const Sidebar: FC = () => {
 			</a>
 			<div className='copy'>&copy; 2020 Youtube, LLC</div>
 		</section>
-	)
+	) : null
 }
 
 export default Sidebar
