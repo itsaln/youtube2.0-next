@@ -8,10 +8,11 @@ import { IAuthFields } from '@/layout/header/auth-form/auth-form.interface'
 import Button from '@/ui/button/Button'
 import Field from '@/ui/field/Field'
 
+import { useAuth } from '@/hooks/useAuth'
 import { useOutside } from '@/hooks/useOutside'
 
-import { useAuth } from '../../../../hooks/useAuth'
-import { AuthService } from '../../../../services/auth/auth.service'
+import { AuthService } from '@/services/auth/auth.service'
+
 import stylesIcons from '../icons/IconsRight.module.scss'
 
 import styles from './AuthForm.module.scss'

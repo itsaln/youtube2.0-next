@@ -1,12 +1,10 @@
 import { axiosClassic } from '@/api/interceptors'
 
-import { getAuthUrl } from '@/config/api.config'
-
 import { IAuthData, removeTokenStorage, saveToStorage } from './auth.helper'
 
 export const AuthService = {
 	async login(email: string, password: string) {
-		const response = await axiosClassic.post<IAuthData>(getAuthUrl('/login'), {
+		const response = await axiosClassic.post<IAuthData>('/auth/login', {
 			email,
 			password
 		})
@@ -17,7 +15,7 @@ export const AuthService = {
 	},
 
 	async register(email: string, password: string) {
-		const response = await axiosClassic.post<IAuthData>(getAuthUrl('/register'), {
+		const response = await axiosClassic.post<IAuthData>('/auth/register', {
 			email,
 			password
 		})

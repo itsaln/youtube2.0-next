@@ -1,15 +1,15 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-import { API_SERVER_URL, API_URL } from '@/config/api.config'
-import { IS_PRODUCTION } from '@/config/constants'
+import { API_URL } from '@/api/api.constants'
 
 export const getContentType = () => ({
 	'Content-Type': 'application/json'
 })
 
 export const axiosClassic = axios.create({
-	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
+	// baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL
+	baseURL: API_URL,
 	headers: getContentType()
 })
 
