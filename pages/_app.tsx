@@ -1,28 +1,21 @@
 import type { AppProps } from 'next/app'
-import { QueryClient, QueryClientProvider } from 'react-query'
 
-import AuthProvider from '@/providers/AuthProvider'
-import HeadProvider from '@/providers/HeadProvider/HeadProvider'
+import MainProvider from '@/providers/MainProvider'
 
-import '../app/assets/styles/globals.scss'
-import '../app/assets/styles/main.scss'
+import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
-const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			refetchOnWindowFocus: false
-		}
-	}
-})
+import 'react-redux-toastr/src/styles/index.scss'
+import '@/assets/styles/globals.scss'
+import '@/assets/styles/main.scss'
 
-export default function App({ Component, pageProps }: AppProps) {
+type TypeAppProps = AppProps & TypeComponentAuthFields
+
+function MyApp({ Component, pageProps }: TypeAppProps) {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<HeadProvider>
-				<AuthProvider>
-					<Component {...pageProps} />
-				</AuthProvider>
-			</HeadProvider>
-		</QueryClientProvider>
+		<MainProvider Component={Component}>
+			<Component {...pageProps} />
+		</MainProvider>
 	)
 }
+
+export default MyApp

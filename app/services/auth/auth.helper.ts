@@ -1,22 +1,18 @@
 import Cookies from 'js-cookie'
 
-export interface IAuthData {
-	user: {
-		_id: string
-		email: string
-	} | null
-	accessToken: string
+import { IAuthResponse, ITokens } from '@/store/user/user.interface'
+
+export const saveTokensStorage = (data: ITokens) => {
+	Cookies.set('accessToken', data.accessToken)
+	Cookies.set('refreshToken', data.refreshToken)
 }
 
-export const saveTokenStorage = (accessToken: string) => {
-	Cookies.set('accessToken', accessToken)
-}
-
-export const removeTokenStorage = () => {
-	Cookies.remove('accessToken')
-}
-
-export const saveToStorage = (data: IAuthData) => {
-	saveTokenStorage(data.accessToken)
+export const saveToStorage = (data: IAuthResponse) => {
+	saveTokensStorage(data)
 	localStorage.setItem('user', JSON.stringify(data.user))
+}
+
+export const removeTokensStorage = () => {
+	Cookies.remove('accessToken')
+	Cookies.remove('refreshToken')
 }

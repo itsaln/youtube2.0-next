@@ -1,13 +1,9 @@
-TODO:
-RED Group
-/uploads/avatar/red-group.jpg
-DEEPDISCO
-/uploads/avatar/deepdisco.jpg
-ТОПЛЕС
-/uploads/avatar/toples.jpg
-Владилен Минин
-/uploads/avatar/vladilen_minin.jpg
-Артемий Лебедев
-/uploads/avatar/temalebedev.jpg
-ВОТ ЭТО английский
-/uploads/avatar/voteto.jpg
+[] - User info sidebar
+[] - Sidebar
+[] - Weekly featured
+[] - Random video
+[] - All videos
+[] - Most popular video
+[] - Most popular channel
+[] - Search
+[] - Upload new video with popup

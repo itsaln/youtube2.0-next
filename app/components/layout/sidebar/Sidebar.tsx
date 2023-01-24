@@ -1,17 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
+
+import ProfileInfo from '@/layout/sidebar/profile-info/ProfileInfo'
 
 import Line from '@/ui/Line'
 
+import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
-import { defaultValueAuthState } from '@/providers/AuthProvider'
-
-import { AuthService } from '@/services/auth/auth.service'
-
 const Sidebar: FC = () => {
-	const { user, setData } = useAuth()
+	const { user } = useAuth()
+
+	const { logout } = useActions()
+	const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault()
+		logout()
+	}
 
 	return user ? (
 		<section className='sidebar'>
@@ -24,26 +29,7 @@ const Sidebar: FC = () => {
 				/>
 			</Link>
 
-			<div className='profile_info'>
-				<Image
-					width={70}
-					height={70}
-					src='http://localhost:3000/img/main/avatar.jpg'
-					alt=''
-				/>
-				<div className='name'>Nannie Nelson</div>
-				<div className='location'>Montreal, QC</div>
-			</div>
-			<div className='information'>
-				<div className='item'>
-					<div className='top'>278</div>
-					<div className='bottom'>videos</div>
-				</div>
-				<div className='item'>
-					<div className='top'>36.5k</div>
-					<div className='bottom'>subscribers</div>
-				</div>
-			</div>
+			<ProfileInfo />
 
 			<Line />
 
@@ -125,13 +111,7 @@ const Sidebar: FC = () => {
 				<p>Light On</p>
 			</div>
 
-			<button
-				id='logout_btn'
-				onClick={() => {
-					AuthService.logout()
-					setData && setData(defaultValueAuthState)
-				}}
-			>
+			<button id='logout_btn' onClick={handleLogout}>
 				Logout
 			</button>
 			<div className='copy'>&copy; 2020 Youtube, LLC</div>

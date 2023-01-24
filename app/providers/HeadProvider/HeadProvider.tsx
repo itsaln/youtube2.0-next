@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import NextNProgress from 'nextjs-progressbar'
 import { FC, PropsWithChildren } from 'react'
 
-// import { accentColor } from '@/config/constants'
+import { accentColor } from '@/config/constants'
 
 import Favicons from '@/providers/HeadProvider/Favicons'
 
@@ -24,11 +24,11 @@ const HeadProvider: FC<PropsWithChildren> = ({ children }) => {
 
 				<Favicons />
 
-				<meta name='theme-color' content={'#f00'} />
-				<meta name='msapplication-navbutton-color' content={'#f00'} />
+				<meta name='theme-color' content={accentColor} />
+				<meta name='msapplication-navbutton-color' content={accentColor} />
 				<meta
 					name='apple-mobile-web-app-status-bar-style'
-					content={'#f00'}
+					content={accentColor}
 				/>
 
 				<link rel='manifest' href='/manifest.json' />
