@@ -1,0 +1,47 @@
+{
+  "theme_color": "#CD313A",
+  "background_color": "#CD313A",
+  "scope": "/",
+  "start_url": "/",
+  "name": "YouTube2.0",
+  "app_name": "YouTube2.0",
+  "short_name": "YouTube2.0",
+  "description": "The youtube2.0 application",
+  "icons": [
+    {
+      "src": "/apple-touch-icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+    ,{
+      "src": "/apple-touch-icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
