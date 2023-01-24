@@ -24,11 +24,11 @@ const HeadProvider: FC<PropsWithChildren> = ({ children }) => {
 
 				<Favicons />
 
-				<meta name='theme-color' content={'#CD313A'} />
-				<meta name='msapplication-navbutton-color' content={'#CD313A'} />
+				<meta name='theme-color' content={'#f00'} />
+				<meta name='msapplication-navbutton-color' content={'#f00'} />
 				<meta
 					name='apple-mobile-web-app-status-bar-style'
-					content={'#CD313A'}
+					content={'#f00'}
 				/>
 
 				<link rel='manifest' href='/manifest.json' />
