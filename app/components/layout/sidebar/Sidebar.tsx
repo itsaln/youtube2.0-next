@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC, MouseEvent } from 'react'
 
-import ProfileInfo from '@/layout/sidebar/profile-info/ProfileInfo'
+import ProfileInfo from '@/layout/sidebar/ProfileInfo'
 
 import Line from '@/ui/Line'
 

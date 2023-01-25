@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
@@ -32,6 +33,7 @@ const MainProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 					<AuthProvider Component={Component}>
 						<Layout>{children}</Layout>
 					</AuthProvider>
+					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryClientProvider>
 			</Provider>
 		</HeadProvider>

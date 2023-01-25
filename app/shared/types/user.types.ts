@@ -12,3 +12,9 @@ export interface IUser {
 	createdAt: string
 	updatedAt: string
 }
+
+export interface IUserRequest
+	extends Pick<
+		IUser,
+		'email' | 'description' | 'name' | 'location' | 'avatarPath'
+	> {}

@@ -1,4 +1,4 @@
-[] - User info sidebar
+[x] - User info sidebar
 [] - Sidebar
 [] - Weekly featured
 [] - Random video

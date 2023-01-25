@@ -97,15 +97,14 @@ img {
       > img {
         display: block;
         border-radius: 50%;
-        margin: 0 auto 7px;
-        
-        width: 70px;
-        height: 70px;
+        margin: 0 auto 8px;
       }
 
       > .name {
         font-size: 16px;
         font-weight: 600;
+        margin-top: 8px;
+        margin-bottom: 4px;
       }
 
       > .location {
