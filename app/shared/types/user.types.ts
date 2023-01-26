@@ -9,11 +9,12 @@ export interface IUser {
 	subscribersCount: number
 	videosCount?: number
 	isAdmin: boolean
+
 	createdAt: string
 	updatedAt: string
 }
 
-export interface IUserRequest
+export interface IUserData
 	extends Pick<
 		IUser,
 		'email' | 'description' | 'name' | 'location' | 'avatarPath'

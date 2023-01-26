@@ -1,5 +1,5 @@
 [x] - User info sidebar
-[] - Sidebar
+[x] - Sidebar
 [] - Weekly featured
 [] - Random video
 [] - All videos
@@ -7,3 +7,5 @@
 [] - Most popular channel
 [] - Search
 [] - Upload new video with popup
+
+[] - verified icon near name
