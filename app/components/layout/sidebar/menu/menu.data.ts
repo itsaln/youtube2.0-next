@@ -17,8 +17,8 @@ export const menu: IMenuItem[] = [
 		link: '/videos'
 	},
 	{
-		title: 'Live',
-		image: 'img/common/live-news.svg',
+		title: 'Hot',
+		image: 'img/common/hot-news.svg',
 		link: '/videos'
 	},
 	{

@@ -1,0 +1,56 @@
+@import '../../../assets/styles/variables';
+
+.video_item {
+  @apply block;
+
+  > .thumbnail {
+    @apply relative block;
+
+    > .hot {
+      @apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
+      background-color: rgba(229, 27, 23, .76);
+      font-size: 12px;
+    }
+
+    > time {
+      @apply absolute rounded-sm text-white flex items-center justify-center w-14 h-6 left-2 bottom-2.5;
+      background-color: rgba(0, 0, 0, .5);
+      font-size: 12px;
+    }
+
+    > .avatar {
+      @apply block bg-white p-0.5 rounded-full absolute;
+      right: 10px;
+      bottom: -18px;
+
+      > img {
+        @apply rounded-full;
+      }
+    }
+  }
+
+  > .author {
+    @apply inline-block mt-1;
+    color: $gray;
+  }
+
+  > .name {
+    @apply block text-sm font-semibold truncate mt-1 mb-2;
+  }
+
+  > .description {
+    color: $gray;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  > .number_info {
+    @apply flex items-center;
+
+    > div {
+      @apply uppercase font-semibold mx-4 first:ml-0;
+      font-size: 12px;
+      color: $gray;
+    }
+  }
+}

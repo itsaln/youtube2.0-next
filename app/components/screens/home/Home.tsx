@@ -11,14 +11,17 @@ import Meta from '@/utils/meta/Meta'
 import Recommended from './recommended/Recommended'
 import WeeklyFeatured from './weekly-featured/WeeklyFeatured'
 
-const Home: FC<IHome> = ({ weeklyVideos }) => {
+const Home: FC<IHome> = ({ weeklyVideos, randomVideo, newVideos }) => {
 	console.log(weeklyVideos)
 
 	return (
 		<Meta title='Youtube v2.0 - Best video'>
 			<div id='wrapper_content'>
 				<div className='left_side'>
-					<WeeklyFeatured />
+					<WeeklyFeatured
+						weeklyVideos={weeklyVideos}
+						randomVideo={randomVideo}
+					/>
 
 					<Line />
 
