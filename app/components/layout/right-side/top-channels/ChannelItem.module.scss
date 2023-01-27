@@ -1,0 +1,34 @@
+@import '../../../../assets/styles/variables';
+
+.channel {
+  @apply flex items-center justify-between mb-4;
+
+  .info_left {
+    @apply flex items-center;
+
+    img {
+      @apply rounded-full mr-3 transition-opacity hover:opacity-80;
+      @include min-size(70px);
+      @include max-size(70px);
+    }
+
+    .info {
+      .name {
+        @apply relative text-lg font-medium;
+      }
+
+      .subs {
+        color: $gray;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .mnu {
+    @apply no-underline;
+
+    > img {
+      max-width: 20px;
+    }
+  }
+}

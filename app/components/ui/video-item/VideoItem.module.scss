@@ -3,23 +3,29 @@
 .video_item {
   @apply block;
 
-  > .thumbnail {
+  .thumbnail {
     @apply relative block;
 
-    > .hot {
-      @apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
+    > a {
+      &:first-child {
+        @apply transition-opacity hover:opacity-90;
+      }
+    }
+
+    .hot {
+      @apply absolute rounded-sm text-sm text-white flex items-center justify-center h-6 left-2 top-2 pr-2;
       background-color: rgba(229, 27, 23, .76);
     }
 
-    > time {
+    time {
       @apply absolute rounded-sm text-white flex items-center justify-center w-14 h-6 left-2 bottom-2.5;
       background-color: rgba(0, 0, 0, .5);
     }
 
-    > .avatar {
+    .avatar {
       @apply block bg-white p-0.5 rounded-full absolute;
       right: 10px;
-      bottom: -18px;
+      bottom: -30px;
 
       > img {
         @apply rounded-full;
@@ -27,21 +33,21 @@
     }
   }
 
-  > .author {
+  .author {
     @apply inline-block text-sm mt-2;
     color: $gray;
   }
 
-  > .name {
+  .name {
     @apply block font-semibold mt-1 mb-3;
   }
 
-  > .description {
+  .description {
+    @apply mb-5;
     color: $gray;
-    margin-bottom: 20px;
   }
 
-  > .number_info {
+  .number_info {
     @apply flex items-center;
 
     > div {

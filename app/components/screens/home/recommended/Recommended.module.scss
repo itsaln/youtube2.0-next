@@ -1,0 +1,18 @@
+@import '../../../../assets/styles/variables';
+
+.top_block {
+  @apply flex items-center justify-between mb-5;
+
+  .sort {
+    @apply font-medium;
+  }
+}
+
+.catalog {
+  @apply flex flex-wrap gap-4;
+
+  > div {
+    @apply mb-5;
+    flex: 1 1 calc(25% - 2rem);
+  }
+}

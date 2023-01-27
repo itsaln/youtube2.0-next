@@ -10,7 +10,7 @@ import { IVideo } from '@/shared/types/video.types'
 const Slider: FC<{ videos: IVideo[] }> = ({ videos }) => {
 	return (
 		<Swiper
-			spaceBetween={8}
+			spaceBetween={16}
 			modules={[Autoplay]}
 			slidesPerView={2}
 			className='slider_wf'

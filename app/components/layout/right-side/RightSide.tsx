@@ -5,14 +5,22 @@ import TopChannels from '@/layout/right-side/top-channels/TopChannels'
 
 import Line from '@/ui/Line'
 
-const RightSide: FC = () => {
+import { IUser } from '@/shared/types/user.types'
+import { IVideo } from '@/shared/types/video.types'
+
+interface IRightSide {
+	topVideo: IVideo
+	topChannels: IUser[]
+}
+
+const RightSide: FC<IRightSide> = (props) => {
 	return (
 		<div className='right_side'>
-			<MostPopularVideo />
+			<MostPopularVideo video={props.topVideo} />
 
 			<Line />
 
-			<TopChannels />
+			<TopChannels channels={props.topChannels} />
 		</div>
 	)
 }

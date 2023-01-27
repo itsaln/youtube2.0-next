@@ -9,6 +9,7 @@ export interface IUser {
 	subscribersCount: number
 	videosCount?: number
 	isAdmin: boolean
+	isVerified: boolean
 
 	createdAt: string
 	updatedAt: string

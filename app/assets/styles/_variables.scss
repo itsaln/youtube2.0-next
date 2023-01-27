@@ -10,6 +10,18 @@ $gutter40: 35px;
   height: $height;
 }
 
+// min-size to one line
+@mixin min-size($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+}
+
+// max-size to one line
+@mixin max-size($width, $height: $width) {
+  max-width: $width;
+  max-height: $height;
+}
+
 // absolute center
 @mixin center-absolute {
   position: absolute;

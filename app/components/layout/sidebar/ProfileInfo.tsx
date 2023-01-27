@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import Image from 'next/image'
 import { useQuery } from 'react-query'
 
@@ -29,7 +30,9 @@ const ProfileInfo = () => {
 					src={data?.avatarPath || ''}
 					alt={data?.name || ''}
 				/>
-				<div className={styles.name}>{data?.name}</div>
+				<div className={cn(styles.name, { verified: data?.isVerified })}>
+					{data?.name}
+				</div>
 				<div className={styles.location}>{data?.location}</div>
 			</div>
 			<div className={styles.information}>
