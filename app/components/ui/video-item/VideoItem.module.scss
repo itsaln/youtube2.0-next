@@ -9,13 +9,11 @@
     > .hot {
       @apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
       background-color: rgba(229, 27, 23, .76);
-      font-size: 12px;
     }
 
     > time {
       @apply absolute rounded-sm text-white flex items-center justify-center w-14 h-6 left-2 bottom-2.5;
       background-color: rgba(0, 0, 0, .5);
-      font-size: 12px;
     }
 
     > .avatar {
@@ -30,17 +28,16 @@
   }
 
   > .author {
-    @apply inline-block mt-1;
+    @apply inline-block text-sm mt-2;
     color: $gray;
   }
 
   > .name {
-    @apply block text-sm font-semibold truncate mt-1 mb-2;
+    @apply block font-semibold mt-1 mb-3;
   }
 
   > .description {
     color: $gray;
-    font-size: 12px;
     margin-bottom: 20px;
   }
 
@@ -48,8 +45,7 @@
     @apply flex items-center;
 
     > div {
-      @apply uppercase font-semibold mx-4 first:ml-0;
-      font-size: 12px;
+      @apply text-sm uppercase font-semibold mx-4 first:ml-0;
       color: $gray;
     }
   }

@@ -23,3 +23,11 @@ $gutter40: 35px;
   justify-content: center;
   align-items: center;
 }
+
+@mixin truncate-text($number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+}

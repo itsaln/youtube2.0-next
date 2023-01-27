@@ -9,7 +9,6 @@ const Menu: FC = () => {
 			{menu.map((item, index) => (
 				<Fragment key={`${item.link}_${index}`}>
 					<MenuItem item={item} />
-					{index === 3 && <div className='line_mnu' />}
 				</Fragment>
 			))}
 			<div className='line_mnu' />

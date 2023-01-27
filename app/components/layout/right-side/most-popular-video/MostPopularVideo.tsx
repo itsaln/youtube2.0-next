@@ -5,14 +5,13 @@ const MostPopularVideo: FC = () => {
 	return (
 		<div id='hot'>
 			<div className='title_gray'>
-				<h2>Hot</h2>
-				<div className='showmore'>Show More</div>
+				<h2>Top video</h2>
 			</div>
 
 			<div className='video_item video_hot_item'>
 				<div className='thumbnail'>
 					<img src='img/main/hot.jpg' alt='' />
-					<div className='hot'>Hot</div>
+					<div className='hot'>Live</div>
 					<div className='avatar'>
 						<img src='img/main/avatar.jpg' alt='' />
 					</div>

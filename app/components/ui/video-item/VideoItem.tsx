@@ -10,6 +10,7 @@ import { nFormatter } from '@/utils/string/formatNumberToK'
 
 import styles from './VideoItem.module.scss'
 import { IVideoItem } from './video-item.interface'
+import cn from 'classnames'
 
 dayjs.extend(relativeTime)
 
@@ -28,8 +29,8 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar }) => {
 				{isAvatar && (
 					<Link href={`/c/${item.user?._id}`} className={styles.avatar}>
 						<Image
-							width={36}
-							height={36}
+							width={50}
+							height={50}
 							src={item.user?.avatarPath || ''}
 							alt={item.user?.name || ''}
 						/>
@@ -39,10 +40,10 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar }) => {
 			<Link href={`/c/${item.user?._id}`} className={styles.author}>
 				{item.user?.name}
 			</Link>
-			<Link href={`/v/${item._id}`} className={styles.name}>
+			<Link href={`/v/${item._id}`} className={cn(styles.name, 'truncate-1')}>
 				{item.name}
 			</Link>
-			{isLarge && <div className={styles.description}>{item.description}</div>}
+			{isLarge && <div className={cn(styles.description, 'truncate-4')}>{item.description}</div>}
 			<div className={styles.number_info}>
 				<div className={styles.views}>VIEWS {nFormatter(item.views)}</div>
 				{isLarge && (

@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { FC, MouseEvent } from 'react'
 
 import ProfileInfo from '@/layout/sidebar/ProfileInfo'
+import Menu from '@/layout/sidebar/menu/Menu'
 
 import Line from '@/ui/Line'
 
 import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
-import Menu from '@/layout/sidebar/menu/Menu'
 
 const Sidebar: FC = () => {
 	const { user } = useAuth()
