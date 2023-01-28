@@ -1,16 +1,12 @@
 import { FC } from 'react'
 
 import IconsRight from './icons/IconsRight'
+import Search from './search/Search'
 
 const Header: FC = () => {
 	return (
 		<header id='header'>
-			<div className='search_top'>
-				<label>
-					<input type='text' placeholder='Search videos, stars or authors...' />
-					<img src='img/common/search.svg' alt='' />
-				</label>
-			</div>
+			<Search />
 			<IconsRight />
 		</header>
 	)

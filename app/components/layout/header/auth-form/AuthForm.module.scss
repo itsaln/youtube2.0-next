@@ -2,12 +2,13 @@
   @apply relative inline-flex;
 
   .form {
-    @apply block shadow-lg p-4 absolute right-2 animate-scaleIn w-64 z-20 bg-white rounded-md;
+    @apply absolute w-64 shadow-block animate-scaleIn rounded-md right-2 p-4 z-20;
     top: calc(100% + 1.4rem);
 
     .login {
       @apply bg-primary hover:bg-opacity-100;
     }
+
     .register {
       @apply opacity-40 block text-center w-full;
       font-size: 0.8rem;

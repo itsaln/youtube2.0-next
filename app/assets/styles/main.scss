@@ -59,6 +59,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  transition: .2s all ease;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
 .truncate-1 {
   @include truncate-text(1)
 }
@@ -135,7 +143,7 @@ body {
           }
 
           > span.number {
-            color: $red;
+            color: $primary;
             margin-left: 20px;
           }
 
@@ -144,7 +152,7 @@ body {
             height: 100%;
             width: 3px;
             border-radius: 10px;
-            background-color: $red;
+            background-color: $primary;
             position: absolute;
             left: -25px;
             top: 0;
@@ -185,43 +193,6 @@ body {
       padding: 15px 25px;
       position: relative;
       border-bottom: 1px solid $light_gray;
-
-      .search_top {
-        max-width: 400px;
-        margin: 0 auto;
-
-        > label {
-          position: relative;
-          display: block;
-
-          input {
-            border-radius: 30px;
-            padding: 8px 16px;
-            border: 1px solid $light_gray;
-            width: 100%;
-            display: block;
-            transition: box-shadow .4s ease;
-
-            &::placeholder {
-              color: $gray;
-              opacity: .8;
-              font-style: italic;
-            }
-
-            &:focus {
-              box-shadow: 0 3px 6px rgba(0, 0, 0, .04)
-            }
-          }
-
-          img {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: 18px;
-          }
-        }
-      }
     }
 
     #wrapper_content {

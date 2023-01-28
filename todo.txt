@@ -1,11 +1,10 @@
 [x] - User info sidebar
 [x] - Sidebar
-[] - Weekly featured
-[] - Random video
-[] - All videos
-[] - Most popular video
-[] - Most popular channel
-[] - Search
+[x] - Weekly featured
+[x] - Random video
+[x] - All videos
+[x] - Most popular video
+[x] - Most popular channel
+[x] - verified icon near name
+[x] - Search
 [] - Upload new video with popup
-
-[] - verified icon near name
