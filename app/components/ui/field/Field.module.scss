@@ -4,7 +4,7 @@ $gray: #797979;
   @apply relative block mb-4;
 
   > input {
-    @apply py-2 w-full border-b;
+    @apply w-full text-base border-b py-2;
 
     &::placeholder {
       color: $gray;

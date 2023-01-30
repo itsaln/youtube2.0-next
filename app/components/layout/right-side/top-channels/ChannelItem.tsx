@@ -19,7 +19,7 @@ const ChannelItem: FC<{ item: IUser }> = ({ item }) => {
 				<div className={styles.info}>
 					<Link
 						href={`/c/${item._id}`}
-						className={cn(styles.name, 'truncate-1', {
+						className={cn(styles.name, {
 							verified: item.isVerified
 						})}
 					>
@@ -31,7 +31,7 @@ const ChannelItem: FC<{ item: IUser }> = ({ item }) => {
 				</div>
 			</div>
 
-			<Link href='#' className={styles.mnu}>
+			<Link href='/' className={styles.mnu}>
 				<Image
 					width={20}
 					height={20}

@@ -14,7 +14,7 @@
 
     .info {
       .name {
-        @apply relative text-lg font-medium;
+        @apply relative text-lg font-medium truncate-1;
       }
 
       .subs {

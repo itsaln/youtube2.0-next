@@ -4,7 +4,7 @@ $gray: #797979;
   @apply relative block mb-4;
 
   > textarea {
-    @apply py-2 w-full border-b resize-none;
+    @apply w-full text-base border-b resize-none py-2;
     min-height: 200px;
 
     &::placeholder {

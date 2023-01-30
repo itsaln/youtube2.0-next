@@ -39,11 +39,11 @@
   }
 
   .name {
-    @apply block font-semibold mt-1 mb-3;
+    @apply block font-semibold truncate-1 mt-1 mb-3;
   }
 
   .description {
-    @apply mb-5;
+    @apply truncate-4 mb-5;
     color: $gray;
   }
 

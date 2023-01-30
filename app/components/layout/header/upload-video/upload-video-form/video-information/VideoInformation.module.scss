@@ -1,0 +1,21 @@
+.info {
+  .thumbnail {
+    @apply bg-gray-200 text-gray-600 text-lg flex items-center justify-center;
+    min-height: 200px;
+  }
+
+  .details {
+    @apply bg-gray-50 p-3.5;
+
+    > div {
+      @apply mb-3 last:mb-0;
+
+      > span {
+        @apply block text-base text-gray-400 truncate-1 mb-1;
+      }
+      > a {
+        @apply text-primary text-lg opacity-75;
+      }
+    }
+  }
+}

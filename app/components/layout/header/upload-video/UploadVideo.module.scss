@@ -12,9 +12,9 @@
       @apply flex items-center justify-center min-h-full;
 
       .window {
-        @apply mx-auto shadow-block;
+        @apply relative shadow-block p-6 mx-auto;
         width: 1000px;
-        height: 600px;
+        min-height: 500px;
       }
     }
   }

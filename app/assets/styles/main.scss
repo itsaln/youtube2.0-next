@@ -67,22 +67,6 @@ a {
   }
 }
 
-.truncate-1 {
-  @include truncate-text(1)
-}
-
-.truncate-2 {
-  @include truncate-text(2)
-}
-
-.truncate-3 {
-  @include truncate-text(3)
-}
-
-.truncate-4 {
-  @include truncate-text(4)
-}
-
 .img-responsive {
   display: block;
   max-width: 100%;

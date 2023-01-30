@@ -46,18 +46,10 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 			>
 				{item.user?.name}
 			</Link>
-			<Link
-				href={`/v/${item._id}`}
-				className={cn(styles.name, 'truncate-1')}
-				title={item.name}
-			>
+			<Link href={`/v/${item._id}`} className={styles.name} title={item.name}>
 				{item.name}
 			</Link>
-			{isLarge && (
-				<div className={cn(styles.description, 'truncate-4')}>
-					{item.description}
-				</div>
-			)}
+			{isLarge && <div className={styles.description}>{item.description}</div>}
 			<div className={styles.number_info}>
 				<div className={styles.views}>VIEWS {nFormatter(item.views)}</div>
 				{isLarge && (
