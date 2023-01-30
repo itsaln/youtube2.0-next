@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { BsPlusCircleFill } from 'react-icons/bs'
 
 import AuthForm from '@/layout/header/auth-form/AuthForm'
+import UploadVideo from '@/layout/header/upload-video/UploadVideo'
 
 import { useAuth } from '@/hooks/useAuth'
 
@@ -12,12 +12,7 @@ const IconsRight: FC = () => {
 
 	return (
 		<div className={styles.icons}>
-			{!!user && (
-				<button className={styles.button}>
-					<BsPlusCircleFill fill='#CD3A42' />
-				</button>
-			)}
-			{!user && <AuthForm />}
+			{!!user ? <UploadVideo /> : <AuthForm />}
 		</div>
 	)
 }
