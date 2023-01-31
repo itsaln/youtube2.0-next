@@ -19,3 +19,7 @@
     }
   }
 }
+
+.uploadScreen {
+  @apply absolute flex w-full h-full left-0 top-0;
+}

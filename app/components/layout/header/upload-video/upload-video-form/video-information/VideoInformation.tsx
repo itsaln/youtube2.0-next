@@ -10,7 +10,11 @@ const VideoInformation: FC = () => {
 			<div className={styles.details}>
 				<div>
 					<span>Video link</span>
-					<Link href={'/'}>https://youtube.com/v/wefasfadwqwr</Link>
+					<span>
+						<Link href={'/'}>
+							https://youtube.com/v/wefasfadwqwrwefasfadwqwrwefasfadwqwr
+						</Link>
+					</span>
 				</div>
 				<div>
 					<span>Filename</span>

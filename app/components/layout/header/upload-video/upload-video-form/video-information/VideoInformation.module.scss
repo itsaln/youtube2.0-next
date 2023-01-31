@@ -11,10 +11,16 @@
       @apply mb-3 last:mb-0;
 
       > span {
-        @apply block text-base text-gray-400 truncate-1 mb-1;
-      }
-      > a {
-        @apply text-primary text-lg opacity-75;
+        @apply block text-base;
+
+        &:first-child {
+          @apply text-gray-400 mb-1;
+        }
+        &:last-child {
+          > a {
+            @apply text-primary text-lg truncate-1 opacity-75;
+          }
+        }
       }
     }
   }
