@@ -40,6 +40,14 @@ const UploadVideoForm: FC<{ videoId: string }> = ({ videoId }) => {
 		setVideoFileName(value.name)
 	}
 
+	const [percent, setPercent] = useState(0)
+	const [isUploaded, setIsUploaded] = useState(false)
+	const setProgressPercentage = (val: number) => {
+		// console.log(val)
+		setPercent(val)
+		if (val === 100) setIsUploaded(true)
+	}
+
 	// TODO: Update name when uploading video
 
 	return (
@@ -73,12 +81,15 @@ const UploadVideoForm: FC<{ videoId: string }> = ({ videoId }) => {
 						/>
 					</div>
 					<div className='w-2/5 p-3 pl-8'>
-						<VideoInformation videoId={videoId} fileName={videoFileName} />
+						<VideoInformation
+							videoId={videoId}
+							fileName={videoFileName}
+							isUploaded={isUploaded}
+						/>
 					</div>
-					{/* Upload video file */}
 					{/* Upload thumbnail file */}
 
-					<FooterForm />
+					<FooterForm percent={percent} isUploaded={isUploaded} />
 				</>
 			) : (
 				<div className={styles.uploadScreen}>
@@ -90,6 +101,7 @@ const UploadVideoForm: FC<{ videoId: string }> = ({ videoId }) => {
 								title='Сначала загрузите видео 👇'
 								folder='videos'
 								onChange={handleUploadVideo}
+								setValue={setProgressPercentage}
 							/>
 						)}
 					/>

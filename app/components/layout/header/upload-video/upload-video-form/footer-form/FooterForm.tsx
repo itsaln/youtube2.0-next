@@ -6,9 +6,14 @@ import Button from '@/ui/button/Button'
 
 import styles from './FooterForm.module.scss'
 
+interface IFooterForm {
+	percent: number
+	isUploaded: boolean
+}
+
 const isUploaded = false
 
-const FooterForm: FC = () => {
+const FooterForm: FC<IFooterForm> = ({ percent, isUploaded }) => {
 	return (
 		<div className={styles.footer}>
 			<div
@@ -18,7 +23,9 @@ const FooterForm: FC = () => {
 			>
 				<MdUpload className={styles['upload-icon']} />
 				<MdCheckCircle className={styles['check-icon']} />
-				<span>{isUploaded ? 'Video is uploaded' : 'Uploading 48%...'}</span>
+				<span>
+					{isUploaded ? 'Video is uploaded' : `Uploading ${percent}%...`}
+				</span>
 			</div>
 			<div>
 				<Button>Save</Button>

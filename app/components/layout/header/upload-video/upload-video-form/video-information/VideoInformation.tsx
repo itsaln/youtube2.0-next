@@ -1,23 +1,30 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
 import styles from './VideoInformation.module.scss'
 
 interface IVideoInformation {
-	thumbnailPath?: boolean
+	thumbnailPath?: string
 	videoId: string
 	fileName: string
+	isUploaded: boolean
 }
 
 const VideoInformation: FC<IVideoInformation> = ({
 	videoId,
 	fileName,
-	thumbnailPath
+	thumbnailPath,
+	isUploaded
 }) => {
 	return (
 		<div className={styles.info}>
-			{!thumbnailPath && (
-				<div className={styles.thumbnail}>Uploading video...</div>
+			{!thumbnailPath ? (
+				<div className={styles.thumbnail}>
+					{isUploaded ? 'Uploading video...' : 'You should update thumbnail'}
+				</div>
+			) : (
+				<Image width={200} height={200} src={thumbnailPath} alt={''} />
 			)}
 			<div className={styles.details}>
 				<div>

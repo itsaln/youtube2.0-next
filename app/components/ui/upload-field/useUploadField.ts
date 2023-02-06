@@ -7,18 +7,19 @@ import { toastError } from '@/utils/toast-error'
 
 type TypeUpload = (
 	onChange: (...event: any[]) => void,
-	folder?: string
+	folder?: string,
+	setValue?: (val: number) => void
 ) => {
 	uploadFile: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 	isLoading: boolean
 }
 
-export const useUploadField: TypeUpload = (onChange, folder) => {
+export const useUploadField: TypeUpload = (onChange, folder, setValue) => {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const { mutateAsync } = useMutation(
 		'upload file',
-		(data: FormData) => MediaService.upload(data, folder),
+		(data: FormData) => MediaService.upload(data, folder, setValue),
 		{
 			onSuccess: ({ data }) => {
 				onChange(data)
