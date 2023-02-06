@@ -1,9 +1,11 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
 import Field from '@/ui/field/Field'
 import TextArea from '@/ui/text-aria/TextArea'
 import UploadField from '@/ui/upload-field/UploadField'
+
+import { IMediaResponse } from '@/services/media.service'
 
 import { IVideoData } from '@/shared/types/video.types'
 
@@ -13,13 +15,14 @@ import FooterForm from './footer-form/FooterForm'
 import TogglePublic from './toggle-public/TogglePublic'
 import VideoInformation from './video-information/VideoInformation'
 
-const UploadVideoForm: FC = () => {
+const UploadVideoForm: FC<{ videoId: string }> = ({ videoId }) => {
 	const {
 		register,
 		formState: { errors },
 		control,
 		handleSubmit,
-		watch
+		watch,
+		setValue
 	} = useForm<IVideoData>({
 		mode: 'onChange'
 	})
@@ -29,6 +32,13 @@ const UploadVideoForm: FC = () => {
 	}
 
 	const videoPath = watch('videoPath')
+	const [videoFileName, setVideoFileName] = useState('')
+
+	const handleUploadVideo = (value: IMediaResponse) => {
+		setValue('videoPath', value.url)
+		setValue('name', value.name)
+		setVideoFileName(value.name)
+	}
 
 	// TODO: Update name when uploading video
 
@@ -63,7 +73,7 @@ const UploadVideoForm: FC = () => {
 						/>
 					</div>
 					<div className='w-2/5 p-3 pl-8'>
-						<VideoInformation />
+						<VideoInformation videoId={videoId} fileName={videoFileName} />
 					</div>
 					{/* Upload video file */}
 					{/* Upload thumbnail file */}
@@ -72,7 +82,17 @@ const UploadVideoForm: FC = () => {
 				</>
 			) : (
 				<div className={styles.uploadScreen}>
-					<UploadField title='Сначала загрузите видео 👇' />
+					<Controller
+						control={control}
+						name='videoPath'
+						render={() => (
+							<UploadField
+								title='Сначала загрузите видео 👇'
+								folder='videos'
+								onChange={handleUploadVideo}
+							/>
+						)}
+					/>
 				</div>
 			)}
 		</form>

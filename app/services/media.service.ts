@@ -1,6 +1,6 @@
 import axios from '@/api/interceptors'
 
-interface IMediaResponse {
+export interface IMediaResponse {
 	name: string
 	url: string
 }

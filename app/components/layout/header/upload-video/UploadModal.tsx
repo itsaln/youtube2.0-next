@@ -5,7 +5,7 @@ import styles from './UploadVideo.module.scss'
 import UploadVideoForm from './upload-video-form/UploadVideoForm'
 import { IUploadModal } from './upload-video.interface'
 
-const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen }) => {
+const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen, videoId }) => {
 	return (
 		<Transition
 			show={isOpen}
@@ -36,7 +36,7 @@ const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen }) => {
 							leaveTo='opacity-0 scale-95'
 						>
 							<Dialog.Panel className={styles.window}>
-								<UploadVideoForm />
+								<UploadVideoForm videoId={videoId} />
 							</Dialog.Panel>
 						</Transition.Child>
 					</div>

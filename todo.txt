@@ -7,4 +7,19 @@
 [x] - Most popular channel
 [x] - verified icon near name
 [x] - Search
-[] - Upload new video with popup
+
+[] - Progress percentage when upload
+[] - Success status (check)
+[] - Thumbnails
+[] - Save button and upload video
+
+[] - Channel page
+[] - Video page
+ [] - Player
+ [] - Comment
+ [] - Likes, views
+
+[] - Studio
+ [] - List videos
+ [] - Update video
+ [] - Remove video
