@@ -4,8 +4,14 @@ import styles from './UploadField.module.scss'
 import { IUploadField } from './upload-field.interface'
 import { useUploadField } from './useUploadField'
 
-const UploadField: FC<IUploadField> = ({ title, onChange, folder, setValue }) => {
-	const { uploadFile } = useUploadField(onChange, folder, setValue)
+const UploadField: FC<IUploadField> = ({
+	title,
+	onChange,
+	folder,
+	setValue,
+	setIsChosen
+}) => {
+	const { uploadFile } = useUploadField(onChange, folder, setValue, setIsChosen)
 
 	return (
 		<div className={styles.file}>

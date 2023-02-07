@@ -1,4 +1,11 @@
-import { ChangeEvent, useCallback, useMemo, useState } from 'react'
+import {
+	ChangeEvent,
+	Dispatch,
+	SetStateAction,
+	useCallback,
+	useMemo,
+	useState
+} from 'react'
 import { useMutation } from 'react-query'
 
 import { MediaService } from '@/services/media.service'
@@ -8,13 +15,19 @@ import { toastError } from '@/utils/toast-error'
 type TypeUpload = (
 	onChange: (...event: any[]) => void,
 	folder?: string,
-	setValue?: (val: number) => void
+	setValue?: (val: number) => void,
+	setIsChosen?: Dispatch<SetStateAction<boolean>>
 ) => {
 	uploadFile: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 	isLoading: boolean
 }
 
-export const useUploadField: TypeUpload = (onChange, folder, setValue) => {
+export const useUploadField: TypeUpload = (
+	onChange,
+	folder,
+	setValue,
+	setIsChosen
+) => {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const { mutateAsync } = useMutation(
@@ -37,6 +50,8 @@ export const useUploadField: TypeUpload = (onChange, folder, setValue) => {
 			const files = e.target.files
 
 			if (!files?.length) return
+
+			setIsChosen && setIsChosen(true)
 
 			const formData = new FormData()
 			formData.append('media', files[0])

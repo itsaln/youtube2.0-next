@@ -21,7 +21,7 @@ const VideoInformation: FC<IVideoInformation> = ({
 		<div className={styles.info}>
 			{!thumbnailPath ? (
 				<div className={styles.thumbnail}>
-					{isUploaded ? 'Uploading video...' : 'You should update thumbnail'}
+					{!isUploaded ? 'Uploading video...' : 'You should update thumbnail'}
 				</div>
 			) : (
 				<Image width={200} height={200} src={thumbnailPath} alt={''} />

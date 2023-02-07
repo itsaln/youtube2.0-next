@@ -6,6 +6,8 @@ import UploadVideoForm from './upload-video-form/UploadVideoForm'
 import { IUploadModal } from './upload-video.interface'
 
 const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen, videoId }) => {
+	const handleCloseModal = () => setIsOpen(false)
+
 	return (
 		<Transition
 			show={isOpen}
@@ -17,11 +19,7 @@ const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen, videoId }) => {
 			leaveTo='opacity-0'
 			as={Fragment}
 		>
-			<Dialog
-				open={isOpen}
-				onClose={() => setIsOpen(false)}
-				className={styles.modal}
-			>
+			<Dialog open={isOpen} onClose={handleCloseModal} className={styles.modal}>
 				<div className={styles.overlay} aria-hidden='true' />
 
 				<div className={styles.wrapper}>
@@ -36,7 +34,7 @@ const UploadModal: FC<IUploadModal> = ({ isOpen, setIsOpen, videoId }) => {
 							leaveTo='opacity-0 scale-95'
 						>
 							<Dialog.Panel className={styles.window}>
-								<UploadVideoForm videoId={videoId} />
+								<UploadVideoForm videoId={videoId} handleCloseModal={handleCloseModal} />
 							</Dialog.Panel>
 						</Transition.Child>
 					</div>

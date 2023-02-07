@@ -11,8 +11,6 @@ interface IFooterForm {
 	isUploaded: boolean
 }
 
-const isUploaded = false
-
 const FooterForm: FC<IFooterForm> = ({ percent, isUploaded }) => {
 	return (
 		<div className={styles.footer}>

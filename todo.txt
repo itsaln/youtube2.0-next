@@ -8,9 +8,9 @@
 [x] - verified icon near name
 [x] - Search
 
-[] - Progress percentage when upload
-[] - Success status (check)
-[] - Thumbnails
+[x] - Progress percentage when upload
+[x] - Success status (check)
+[x] - Thumbnails
 [] - Save button and upload video
 
 [] - Channel page
