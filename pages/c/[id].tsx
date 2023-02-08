@@ -8,7 +8,7 @@ import { VideoService } from '@/services/video.service'
 
 import { IUser } from '@/shared/types/user.types'
 
-const ChannelPage: NextPage<IChannel> = ({channel, videos}) => {
+const ChannelPage: NextPage<IChannel> = ({ channel, videos }) => {
 	return <Channel channel={channel} videos={videos} />
 }
 
@@ -16,6 +16,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	try {
 		const { data: users } = await UserService.getAll()
 		const paths = users.map((user) => ({ params: { id: user._id } }))
+		console.log('users:---', users)
+		console.log('paths:---', paths)
 
 		return {
 			paths,
@@ -32,6 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
 		const userId = String(params?.id)
+		console.log('userId:---', userId)
 
 		const { data: videos } = await VideoService.getAllByUserId(userId)
 		const { data: channel } = await UserService.getProfile()
