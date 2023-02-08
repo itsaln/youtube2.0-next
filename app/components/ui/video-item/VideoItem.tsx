@@ -7,6 +7,8 @@ import { FC } from 'react'
 
 import VideoDuration from '@/ui/video-item/VideoDuration'
 
+import { getChannelUrl, getVideoUrl } from '@/config/url.config'
+
 import { nFormatter } from '@/utils/string/formatNumberToK'
 
 import styles from './VideoItem.module.scss'
@@ -18,19 +20,20 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 	return (
 		<div className={styles.video_item}>
 			<div className={styles.thumbnail}>
-				<Link href={`/v/${item._id}`}>
+				<Link href={getVideoUrl(item._id)}>
 					<Image
 						width={248}
 						height={166}
 						src={item.thumbnailPath}
 						alt={item.name}
-						layout='responsive'
+						layout={'responsive'}
+						priority
 					/>
 				</Link>
 				<VideoDuration videoPath={item.videoPath} />
 				{tag && <div className={styles.hot}>{tag}</div>}
 				{isAvatar && (
-					<Link href={`/c/${item.user?._id}`} className={styles.avatar}>
+					<Link href={getChannelUrl(item.user?._id)} className={styles.avatar}>
 						<Image
 							width={50}
 							height={50}
@@ -41,12 +44,16 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 				)}
 			</div>
 			<Link
-				href={`/c/${item.user?._id}`}
+				href={getChannelUrl(item.user?._id)}
 				className={cn(styles.author, { verified: item.user?.isVerified })}
 			>
 				{item.user?.name}
 			</Link>
-			<Link href={`/v/${item._id}`} className={styles.name} title={item.name}>
+			<Link
+				href={getVideoUrl(item._id)}
+				className={styles.name}
+				title={item.name}
+			>
 				{item.name}
 			</Link>
 			{isLarge && <div className={styles.description}>{item.description}</div>}

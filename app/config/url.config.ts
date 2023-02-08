@@ -1,6 +1,5 @@
-export const getMovieUrl = (slug: string) => `/movie/${slug}`
-export const getGenreUrl = (slug: string) => `/genre/${slug}`
-export const getActorUrl = (slug: string) => `/actor/${slug}`
+export const getVideoUrl = (id: string | undefined) => `/v/${id}`
+export const getChannelUrl = (id: string | undefined) => `/c/${id}`
 
-export const getAdminUrl = (url: string) => `/manage/${url}`
+export const getAdminUrl = (url: string | undefined) => `/manage/${url}`
 export const getAdminHomeUrl = () => getAdminUrl('').slice(0, -1)

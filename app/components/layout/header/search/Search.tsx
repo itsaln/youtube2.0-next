@@ -18,10 +18,16 @@ const Search: FC = () => {
 					value={searchTerm}
 					onChange={handleSearch}
 				/>
+				{/*<img*/}
+				{/*	width={18}*/}
+				{/*	height={18}*/}
+				{/*	src='/img/common/search.svg'*/}
+				{/*	alt='Search icon'*/}
+				{/*/>*/}
 				<Image
 					width={18}
 					height={18}
-					src='img/common/search.svg'
+					src='/img/common/search.svg'
 					alt='Search icon'
 				/>
 			</label>

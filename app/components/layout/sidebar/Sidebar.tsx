@@ -22,12 +22,15 @@ const Sidebar: FC = () => {
 	return user ? (
 		<section className='sidebar'>
 			<Link href='/' className='logo'>
+				{/*<a href='/' className='logo'>*/}
+				{/*	<img width={130} height={42} src='/img/common/logo.png' alt='Youtube' />*/}
 				<Image
 					width={130}
 					height={42}
-					src='http://localhost:3000/img/common/logo.png'
+					src='/img/common/logo.png'
 					alt='Youtube'
 				/>
+				{/*</a>*/}
 			</Link>
 
 			<ProfileInfo />

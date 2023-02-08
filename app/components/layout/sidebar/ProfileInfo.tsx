@@ -24,6 +24,7 @@ const ProfileInfo = () => {
 	) : (
 		<>
 			<div className={styles.profile_info}>
+				{/*<img width={70} height={70} src={data?.avatarPath || ''} alt={data?.name || ''} />*/}
 				<Image
 					width={70}
 					height={70}

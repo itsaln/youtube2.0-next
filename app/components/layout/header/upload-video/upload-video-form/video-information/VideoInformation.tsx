@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
+import { getVideoUrl } from '@/config/url.config'
+
 import styles from './VideoInformation.module.scss'
 
 interface IVideoInformation {
@@ -24,13 +26,20 @@ const VideoInformation: FC<IVideoInformation> = ({
 					{!isUploaded ? 'Uploading video...' : 'You should update thumbnail'}
 				</div>
 			) : (
-				<Image width={200} height={200} src={thumbnailPath} alt={''} />
+				<Image
+					src={thumbnailPath}
+					alt={''}
+					width={200}
+					height={200}
+					layout={'responsive'}
+					priority
+				/>
 			)}
 			<div className={styles.details}>
 				<div>
 					<span>Video link</span>
 					<span>
-						<Link href={`/v/${videoId}`}>
+						<Link href={getVideoUrl(videoId)}>
 							https://localhost.com/v/{videoId}
 						</Link>
 					</span>

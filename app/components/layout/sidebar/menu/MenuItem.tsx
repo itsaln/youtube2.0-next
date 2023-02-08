@@ -8,8 +8,11 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 	return (
 		<li>
 			<Link href={item.link}>
+				{/*<a href={item.link}>*/}
+				{/*	<img width={24} height={24} src={item.image} alt={item.title} />*/}
 				<Image width={24} height={24} src={item.image} alt={item.title} />
 				<b>{item.title}</b>
+				{/*</a>*/}
 			</Link>
 		</li>
 	)
