@@ -4,7 +4,6 @@ import MainProvider from '@/providers/MainProvider'
 
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
-import 'react-redux-toastr/src/styles/index.scss'
 import '@/assets/styles/globals.scss'
 import '@/assets/styles/main.scss'
 

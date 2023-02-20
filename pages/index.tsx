@@ -9,8 +9,22 @@ import { VideoService } from '@/services/video.service'
 
 import { IVideo } from '@/shared/types/video.types'
 
-const HomePage: NextPage<IHome> = (props) => {
-	return <Home {...props} />
+const HomePage: NextPage<IHome> = ({
+	topChannels,
+	topVideo,
+	newVideos,
+	weeklyVideos,
+	randomVideo
+}) => {
+	return (
+		<Home
+			topChannels={topChannels}
+			topVideo={topVideo}
+			newVideos={newVideos}
+			weeklyVideos={weeklyVideos}
+			randomVideo={randomVideo}
+		/>
+	)
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -19,9 +33,11 @@ export const getStaticProps: GetStaticProps = async () => {
 		const topVideo = await VideoService.getMostPopularByViews().then(
 			({ data }) => data[0] || ({} as IVideo)
 		)
-		const topChannels = await UserService.getMostPopular().then(
-			({ data }) => data
-		)
+		const { data: topChannels } = await UserService.getMostPopular()
+
+		// console.log('newVideos:---', newVideos)
+		// console.log('topVideo:---', topVideo)
+		// console.log('topChannels:---', topChannels)
 
 		return {
 			props: {

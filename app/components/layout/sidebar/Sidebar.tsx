@@ -20,17 +20,14 @@ const Sidebar: FC = () => {
 	}
 
 	return user ? (
-		<section className='sidebar'>
+		<div className='sidebar'>
 			<Link href='/' className='logo'>
-				{/*<a href='/' className='logo'>*/}
-				{/*	<img width={130} height={42} src='/img/common/logo.png' alt='Youtube' />*/}
 				<Image
 					width={130}
 					height={42}
 					src='/img/common/logo.png'
 					alt='Youtube'
 				/>
-				{/*</a>*/}
 			</Link>
 
 			<ProfileInfo />
@@ -51,7 +48,7 @@ const Sidebar: FC = () => {
 				Logout
 			</button>
 			<div className='copy'>&copy; 2023 Youtube, LLC</div>
-		</section>
+		</div>
 	) : null
 }
 

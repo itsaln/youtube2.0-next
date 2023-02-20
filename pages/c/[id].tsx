@@ -16,8 +16,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	try {
 		const { data: users } = await UserService.getAll()
 		const paths = users.map((user) => ({ params: { id: user._id } }))
-		console.log('users:---', users)
-		console.log('paths:---', paths)
 
 		return {
 			paths,
@@ -38,6 +36,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 		const { data: videos } = await VideoService.getAllByUserId(userId)
 		const { data: channel } = await UserService.getProfile()
+
+		console.log('videos:---', videos)
+		console.log('channel:---', channel)
 
 		return {
 			props: {

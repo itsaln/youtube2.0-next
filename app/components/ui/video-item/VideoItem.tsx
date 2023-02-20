@@ -22,10 +22,10 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 			<div className={styles.thumbnail}>
 				<Link href={getVideoUrl(item._id)}>
 					<Image
-						width={248}
-						height={166}
 						src={item.thumbnailPath}
 						alt={item.name}
+						width={248}
+						height={166}
 						layout={'responsive'}
 						priority
 					/>

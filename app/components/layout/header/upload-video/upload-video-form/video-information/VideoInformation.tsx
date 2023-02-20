@@ -28,7 +28,7 @@ const VideoInformation: FC<IVideoInformation> = ({
 			) : (
 				<Image
 					src={thumbnailPath}
-					alt={''}
+					alt={fileName}
 					width={200}
 					height={200}
 					layout={'responsive'}

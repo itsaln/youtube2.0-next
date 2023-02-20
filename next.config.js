@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// reactStrictMode: true,
-	// swcMinify: true,
+	reactStrictMode: true,
+	swcMinify: true,
 	poweredByHeader: false,
 	optimizeFonts: false,
 	env: {
@@ -9,9 +9,9 @@ const nextConfig = {
 		APP_ENV: process.env.REACT_APP_ENV,
 		APP_SERVER_URL: process.env.REACT_APP_SERVER_URL
 	},
-	images: {
-		domains: ['localhost']
-	},
+	// images: {
+	// 	domains: ['localhost']
+	// },
 	async rewrites() {
 		return [
 			{

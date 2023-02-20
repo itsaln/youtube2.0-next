@@ -11,21 +11,39 @@ import Meta from '@/utils/meta/Meta'
 import Recommended from './recommended/Recommended'
 import WeeklyFeatured from './weekly-featured/WeeklyFeatured'
 
-const Home: FC<IHome> = (props) => {
+const Home: FC<IHome> = ({
+	weeklyVideos,
+	randomVideo,
+	topVideo,
+	topChannels,
+	newVideos
+}) => {
 	return (
 		<Meta title='Youtube v2.0 - Best video'>
 			<div id='wrapper_content'>
 				<div className='left_side'>
-					<WeeklyFeatured
-						weeklyVideos={props.weeklyVideos}
-						randomVideo={props.randomVideo}
-					/>
+					{!!weeklyVideos.length && !!randomVideo ? (
+						<WeeklyFeatured
+							weeklyVideos={weeklyVideos}
+							randomVideo={randomVideo}
+						/>
+					) : (
+						<div className='font-bold text-danger'>Not found!</div>
+					)}
 
 					<Line />
 
-					<Recommended newVideos={props.newVideos} />
+					{!!newVideos.length ? (
+						<Recommended newVideos={newVideos} />
+					) : (
+						<div className='font-bold text-danger'>New videos not found!</div>
+					)}
 				</div>
-				<RightSide topVideo={props.topVideo} topChannels={props.topChannels} />
+				{!!topVideo && !!topChannels.length ? (
+					<RightSide topVideo={topVideo} topChannels={topChannels} />
+				) : (
+					<div className='font-bold text-danger'>Top videos not found!</div>
+				)}
 			</div>
 		</Meta>
 	)
