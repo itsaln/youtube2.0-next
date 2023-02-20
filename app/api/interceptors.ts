@@ -11,17 +11,12 @@ import { errorCatch, getContentType } from './api.helpers'
 
 export const axiosClassic = axios.create({
 	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
-	headers: {
-		'Content-Type': 'application/json',
-		'Accept-Encoding': 'gzip'
-	}
+	headers: getContentType()
 })
 
 export const instance = axios.create({
 	baseURL: API_URL,
-	headers: {
-		'Content-Type': 'application/json'
-	}
+	headers: getContentType()
 })
 
 instance.interceptors.request.use((config) => {

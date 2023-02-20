@@ -14,8 +14,12 @@ const ChannelPage: NextPage<IChannel> = ({ channel, videos }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	try {
-		const { data: users } = await UserService.getAll()
-		const paths = users.map((user) => ({ params: { id: user._id } }))
+		const users = await UserService.getAll().then(({ data }) => data)
+		const paths = users.map((user) => ({
+			params: {
+				id: user._id
+			}
+		}))
 
 		return {
 			paths,
@@ -32,13 +36,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
 		const userId = String(params?.id)
-		console.log('userId:---', userId)
 
 		const { data: videos } = await VideoService.getAllByUserId(userId)
-		const { data: channel } = await UserService.getProfile()
-
-		console.log('videos:---', videos)
-		console.log('channel:---', channel)
+		const channel = await UserService.getOne(userId).then(
+			({ data }) => data || ({} as IUser)
+		)
 
 		return {
 			props: {

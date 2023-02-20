@@ -35,10 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
 		)
 		const { data: topChannels } = await UserService.getMostPopular()
 
-		// console.log('newVideos:---', newVideos)
-		// console.log('topVideo:---', topVideo)
-		// console.log('topChannels:---', topChannels)
-
 		return {
 			props: {
 				newVideos,
