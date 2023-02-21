@@ -24,12 +24,12 @@ const ProfileInfo = () => {
 	) : (
 		<>
 			<div className={styles.profile_info}>
-				{/*<img width={70} height={70} src={data?.avatarPath || ''} alt={data?.name || ''} />*/}
 				<Image
-					width={70}
-					height={70}
 					src={data?.avatarPath || ''}
 					alt={data?.name || ''}
+					width={70}
+					height={70}
+					quality={90}
 				/>
 				<div className={cn(styles.name, { verified: data?.isVerified })}>
 					{data?.name}

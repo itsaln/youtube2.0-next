@@ -11,9 +11,9 @@
 [x] - Progress percentage when upload
 [x] - Success status (check)
 [x] - Thumbnails
-[] - Save button and upload video
+[x] - Save button and upload video
 
-[] - Channel page
+[x] - Channel page
 [] - Video page
  [] - Player
  [] - Comment

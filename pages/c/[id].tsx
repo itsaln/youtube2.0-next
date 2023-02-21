@@ -1,3 +1,4 @@
+import { shuffle } from 'lodash'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import Channel from '@/screens/channel/Channel'
@@ -7,14 +8,15 @@ import { UserService } from '@/services/user.service'
 import { VideoService } from '@/services/video.service'
 
 import { IUser } from '@/shared/types/user.types'
+import { IVideo } from '@/shared/types/video.types'
 
-const ChannelPage: NextPage<IChannel> = ({ channel, videos }) => {
-	return <Channel channel={channel} videos={videos} />
+const ChannelPage: NextPage<IChannel> = ({ channel, videos, randomVideo }) => {
+	return <Channel channel={channel} videos={videos} randomVideo={randomVideo} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	try {
-		const users = await UserService.getAll().then(({ data }) => data)
+		const { data: users } = await UserService.getAll()
 		const paths = users.map((user) => ({
 			params: {
 				id: user._id
@@ -45,7 +47,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		return {
 			props: {
 				channel,
-				videos
+				videos,
+				randomVideo: shuffle(videos)[0] || ({} as IVideo)
 			} as IChannel,
 			revalidate: 60
 		}
@@ -53,7 +56,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		return {
 			props: {
 				channel: {} as IUser,
-				videos: []
+				videos: [],
+				randomVideo: {} as IVideo
 			} as IChannel
 		}
 	}

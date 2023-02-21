@@ -23,7 +23,6 @@ instance.interceptors.request.use((config) => {
 	const accessToken = Cookies.get('accessToken')
 
 	if (config.headers && accessToken) {
-		// @ts-ignore
 		config.headers.Authorization = `Bearer ${accessToken}`
 	}
 

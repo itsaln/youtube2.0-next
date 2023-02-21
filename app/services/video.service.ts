@@ -16,7 +16,7 @@ export const VideoService = {
 	},
 
 	async getAllByUserId(userId: string) {
-		return await axiosClassic.get<IVideo[]>(getVideosUrl(`/by-user/${userId}`))
+		return await axios.get<IVideo[]>(getVideosUrl(`/by-user/${userId}`))
 	},
 
 	async getAllByUserIdPrivate() {

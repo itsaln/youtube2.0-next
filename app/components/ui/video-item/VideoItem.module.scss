@@ -55,6 +55,10 @@
     > div {
       @apply text-sm uppercase font-semibold mx-4 first:ml-0;
       color: $gray;
+
+      &.subscribers {
+        @apply text-primary;
+      }
     }
   }
 }

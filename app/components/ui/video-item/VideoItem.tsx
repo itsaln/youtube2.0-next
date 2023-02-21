@@ -6,10 +6,9 @@ import Link from 'next/link'
 import { FC } from 'react'
 
 import VideoDuration from '@/ui/video-item/VideoDuration'
+import VideoStatistics from '@/ui/video-item/video-statistics/VideoStatistics'
 
 import { getChannelUrl, getVideoUrl } from '@/config/url.config'
-
-import { nFormatter } from '@/utils/string/formatNumberToK'
 
 import styles from './VideoItem.module.scss'
 import { IVideoItem } from './video-item.interface'
@@ -33,7 +32,10 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 				<VideoDuration videoPath={item.videoPath} />
 				{tag && <div className={styles.hot}>{tag}</div>}
 				{isAvatar && (
-					<Link href={getChannelUrl(item.user?._id)} className={styles.avatar}>
+					<Link
+						href={getChannelUrl(String(item.user?._id))}
+						className={styles.avatar}
+					>
 						<Image
 							width={50}
 							height={50}
@@ -44,7 +46,7 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 				)}
 			</div>
 			<Link
-				href={getChannelUrl(item.user?._id)}
+				href={getChannelUrl(String(item.user?._id))}
 				className={cn(styles.author, { verified: item.user?.isVerified })}
 			>
 				{item.user?.name}
@@ -57,15 +59,11 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 				{item.name}
 			</Link>
 			{isLarge && <div className={styles.description}>{item.description}</div>}
-			<div className={styles.number_info}>
-				<div className={styles.views}>VIEWS {nFormatter(item.views)}</div>
-				{isLarge && (
-					<div className={styles.views}>LIKES {nFormatter(item.likes)}</div>
-				)}
-				<div className={styles.date}>
-					{dayjs(new Date(item.createdAt)).fromNow()}
-				</div>
-			</div>
+			<VideoStatistics
+				views={item.views}
+				likes={isLarge ? item.likes : undefined}
+				createdAt={item.createdAt}
+			/>
 		</div>
 	)
 }

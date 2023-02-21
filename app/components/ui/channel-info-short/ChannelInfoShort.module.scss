@@ -1,0 +1,22 @@
+@import '../../../assets/styles/variables';
+
+.profile_info {
+  @apply text-center flex flex-wrap items-center;
+
+  > img {
+    @apply block rounded-full;
+  }
+
+  > div {
+    @apply ml-4;
+
+    > .name {
+      @apply font-bold text-3xl mb-2;
+    }
+
+    > .location {
+      @apply text-base text-left;
+      color: $gray;
+    }
+  }
+}

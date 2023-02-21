@@ -245,13 +245,11 @@ a {
   }
 }
 
-#wrapper_content {
-  > .left_side {
-    #recommended {
-      padding: 0 $gutter40;
-    }
-  }
+#recommended {
+  padding: 0 $gutter40;
+}
 
+#wrapper_content {
   > .right_side {
     position: relative;
     width: 25%;
