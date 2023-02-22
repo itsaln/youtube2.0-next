@@ -1,7 +1,7 @@
 @import '../../../assets/styles/variables';
 
 .video_item {
-  @apply block;
+  @apply block relative;
 
   .thumbnail {
     @apply relative block;
@@ -11,7 +11,9 @@
         @apply transition-opacity hover:opacity-90;
       }
 
-      > img {}
+      > img {
+        max-height: 174px;
+      }
     }
 
     .hot {

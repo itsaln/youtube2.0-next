@@ -6,7 +6,12 @@ import { IVideo } from '@/shared/types/video.types'
 
 import styles from './Recommended.module.scss'
 
-const Recommended: FC<{ newVideos: IVideo[] }> = ({ newVideos }) => {
+interface IRecommended {
+	newVideos: IVideo[]
+	removeHandler?: (videoId: string) => void
+}
+
+const Recommended: FC<IRecommended> = ({ newVideos, removeHandler }) => {
 	return (
 		<div id='recommended'>
 			<div className={styles.top_block}>
@@ -18,7 +23,12 @@ const Recommended: FC<{ newVideos: IVideo[] }> = ({ newVideos }) => {
 
 			<div className={styles.catalog}>
 				{newVideos.map((video) => (
-					<VideoItem key={video._id} item={video} isAvatar />
+					<VideoItem
+						key={video._id}
+						item={video}
+						isAvatar
+						removeHandler={removeHandler}
+					/>
 				))}
 			</div>
 		</div>

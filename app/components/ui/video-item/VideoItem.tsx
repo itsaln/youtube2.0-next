@@ -4,6 +4,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
+import { BiTrash } from 'react-icons/bi'
 
 import VideoDuration from '@/ui/video-item/VideoDuration'
 import VideoStatistics from '@/ui/video-item/video-statistics/VideoStatistics'
@@ -15,13 +16,27 @@ import { IVideoItem } from './video-item.interface'
 
 dayjs.extend(relativeTime)
 
-const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
+const VideoItem: FC<IVideoItem> = ({
+	item,
+	isLarge,
+	isAvatar,
+	tag,
+	removeHandler
+}) => {
 	return (
 		<div className={styles.video_item}>
+			{!!removeHandler && (
+				<button
+					className='absolute top-3 right-3 z-10'
+					onClick={() => removeHandler(item._id)}
+				>
+					<BiTrash className='text-lg text-red-700' />
+				</button>
+			)}
 			<div className={styles.thumbnail}>
-				<Link href={getVideoUrl(item._id)}>
+				<Link href={getVideoUrl(item._id)} className='block'>
 					<Image
-						src={item.thumbnailPath}
+						src={item.thumbnailPath || '/img/no-image.svg'}
 						alt={item.name}
 						width={248}
 						height={166}
