@@ -79,7 +79,7 @@ export const usePlayer = () => {
 				case 'ArrowLeft':
 					revert()
 					break
-				case ' ':
+				case 'Space':
 					e.preventDefault()
 					await toggleVideo()
 					break

@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from 'clsx'
 import Image from 'next/image'
 import { useQuery } from 'react-query'
 

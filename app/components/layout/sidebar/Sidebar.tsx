@@ -47,7 +47,7 @@ const Sidebar: FC = () => {
 			<button id='logout_btn' onClick={handleLogout}>
 				Logout
 			</button>
-			<div className='copy'>&copy; 2023 Youtube, LLC</div>
+			<p className='copy'>&copy; 2023 Youtube, LLC</p>
 		</div>
 	) : null
 }

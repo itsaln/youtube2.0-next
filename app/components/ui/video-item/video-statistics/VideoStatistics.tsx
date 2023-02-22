@@ -20,12 +20,12 @@ const VideoStatistics: FC<IVideoStatistics> = ({
 }) => {
 	return (
 		<div className={styles.number_info}>
-			<div className={styles.views}>VIEWS {nFormatter(views)}</div>
-			{!!likes && <div className={styles.views}>LIKES {nFormatter(likes)}</div>}
+			<div>Views {nFormatter(views)}</div>
+			{!!likes && <div>Likes {nFormatter(likes)}</div>}
 			<div className={styles.date}>{dayjs(new Date(createdAt)).fromNow()}</div>
 			{!!subscribers && (
-				<div className={styles.views}>
-					SUBSCRIBERS {nFormatter(subscribers)}
+				<div className={styles.subscribers}>
+					Subscribers {nFormatter(subscribers)}
 				</div>
 			)}
 		</div>

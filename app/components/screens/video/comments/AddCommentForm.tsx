@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { MdSend } from 'react-icons/md'
 import { useMutation } from 'react-query'
 
 import styles from '@/layout/header/auth-form/AuthForm.module.scss'
@@ -40,13 +41,18 @@ const AddCommentForm: FC<{ videoId: string; refetch: any }> = ({
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-			<Field
-				{...registerInput('message', {
-					required: 'Message is required'
-				})}
-				placeholder='Add a public comment'
-				error={errors.message}
-			/>
+			<div className='relative'>
+				<Field
+					{...registerInput('message', {
+						required: 'Message is required'
+					})}
+					placeholder='Add a public comment'
+					error={errors.message}
+				/>
+				<button className='text-2xl absolute right-0 top-2'>
+					<MdSend />
+				</button>
+			</div>
 		</form>
 	)
 }

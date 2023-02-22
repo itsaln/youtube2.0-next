@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react'
-import cn from 'classnames'
+import cn from 'clsx'
 import { FC } from 'react'
 
 import styles from './TogglePublic.module.scss'

@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from 'clsx'
 import { FC } from 'react'
 import Skeleton, { SkeletonProps } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'

@@ -8,7 +8,7 @@ import styles from './Comments.module.scss'
 
 const CommentItem: FC<{ comment: IComment }> = ({ comment }) => {
 	return (
-		<div>
+		<div className={styles.commentItem}>
 			<ChannelInfoShort channel={comment.user} />
 			<p>{comment.message}</p>
 		</div>

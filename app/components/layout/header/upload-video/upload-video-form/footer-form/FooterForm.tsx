@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from 'clsx'
 import { FC } from 'react'
 import { MdCheckCircle, MdUpload } from 'react-icons/md'
 

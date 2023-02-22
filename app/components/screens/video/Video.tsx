@@ -1,16 +1,32 @@
-import { FC } from 'react'
+import dynamic from 'next/dynamic'
+import { FC, useEffect } from 'react'
+import { useMutation } from 'react-query'
 
-import Comments from '@/screens/video/comments/Comments'
 import VideoDetail from '@/screens/video/video-detail/VideoDetail'
 import VideoPlayer from '@/screens/video/video-player/VideoPlayer'
 import { IVideoPage } from '@/screens/video/video.interface'
+
+import { VideoService } from '@/services/video.service'
 
 import { IUser } from '@/shared/types/user.types'
 
 import Meta from '@/utils/meta/Meta'
 
+const DynamicComments = dynamic(
+	() => import('@/screens/video/comments/Comments'),
+	{
+		ssr: false
+	}
+)
+
 const Video: FC<IVideoPage> = ({ video }) => {
-	console.log('video:---', video)
+	const { mutate } = useMutation('update views', () =>
+		VideoService.updateCountViews(video._id)
+	)
+
+	useEffect(() => {
+		mutate()
+	}, [])
 
 	return (
 		<Meta title={video.name}>
@@ -21,7 +37,7 @@ const Video: FC<IVideoPage> = ({ video }) => {
 						<VideoDetail video={video} channel={video.user || ({} as IUser)} />
 					</div>
 					<div className='right_side'>
-						<Comments videoId={video._id} />
+						<DynamicComments videoId={video._id} />
 					</div>
 				</div>
 			</div>

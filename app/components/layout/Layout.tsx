@@ -1,21 +1,34 @@
-import cn from 'classnames'
-import { FC, PropsWithChildren } from 'react'
+import cn from 'clsx'
+import dynamic from 'next/dynamic'
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
 
 import Header from '@/layout/header/Header'
-import Sidebar from '@/layout/sidebar/Sidebar'
 
 import { useAuth } from '@/hooks/useAuth'
 
+const DynamicSidebar = dynamic(() => import('@/layout/sidebar/Sidebar'), {
+	ssr: false
+})
+
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	const { user } = useAuth()
+	const [isUser, setIsUser] = useState(false)
+
+	useEffect(() => {
+		if (user) setIsUser(!!user)
+
+		return () => {
+			setIsUser(false)
+		}
+	}, [user])
 
 	return (
 		<main id='youtube_main'>
-			<Sidebar />
+			<DynamicSidebar />
 
 			<section
 				className={cn('content', {
-					'content-full': !user
+					'content-full': !isUser
 				})}
 			>
 				<Header />

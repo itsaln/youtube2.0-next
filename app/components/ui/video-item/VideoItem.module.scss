@@ -48,17 +48,17 @@
     @apply truncate-4 mb-5;
     color: $gray;
   }
+}
 
-  .number_info {
-    @apply flex items-center;
+.number_info {
+  @apply flex items-center;
 
-    > div {
-      @apply text-sm uppercase font-semibold mx-4 first:ml-0;
-      color: $gray;
+  > div {
+    @apply text-sm uppercase font-semibold mx-4 first:ml-0;
+    color: $gray;
 
-      &.subscribers {
-        @apply text-primary;
-      }
+    &.subscribers {
+      @apply text-primary;
     }
   }
 }

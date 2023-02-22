@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from 'clsx'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './Button.module.scss'
