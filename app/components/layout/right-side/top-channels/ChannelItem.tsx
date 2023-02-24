@@ -16,7 +16,7 @@ const ChannelItem: FC<{ item: IUser }> = ({ item }) => {
 		<div className={styles.channel}>
 			<div className={styles.info_left}>
 				<Link href={getChannelUrl(item._id)}>
-					<Image width={70} height={70} src={item.avatarPath} alt={item.name} />
+					<Image width={70} height={70} src={item.avatarPath} alt={item.name || ''} />
 				</Link>
 				<div className={styles.info}>
 					<Link

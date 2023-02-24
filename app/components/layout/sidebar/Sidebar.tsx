@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { FC, MouseEvent } from 'react'
 
 import ProfileInfo from '@/layout/sidebar/ProfileInfo'
@@ -12,11 +13,13 @@ import { useAuth } from '@/hooks/useAuth'
 
 const Sidebar: FC = () => {
 	const { user } = useAuth()
+	const { push } = useRouter()
 
 	const { logout } = useActions()
-	const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
+	const handleLogout = async (e: MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault()
 		logout()
+		await push('/')
 	}
 
 	return user ? (

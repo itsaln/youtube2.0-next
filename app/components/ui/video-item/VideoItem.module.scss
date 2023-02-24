@@ -3,16 +3,24 @@
 .video_item {
   @apply block relative;
 
+  .delete, .update {
+    @apply absolute rounded-full right-2.5 z-10 p-1.5 transition-colors;
+  }
+
+  .delete {
+    @apply bg-red-700/10 hover:bg-red-700/20 top-2.5;
+  }
+
+  .update {
+    @apply bg-blue-600/10 hover:bg-blue-600/20 top-11;
+  }
+
   .thumbnail {
     @apply relative block;
 
     > a {
       &:first-child {
         @apply transition-opacity hover:opacity-90;
-      }
-
-      > img {
-        max-height: 174px;
       }
     }
 
@@ -53,7 +61,7 @@
 }
 
 .number_info {
-  @apply flex items-center;
+  @apply flex items-center justify-between;
 
   > div {
     @apply text-sm uppercase font-semibold mx-4 first:ml-0;

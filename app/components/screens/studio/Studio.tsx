@@ -30,14 +30,22 @@ const Studio: FC = () => {
 		}
 	)
 
+	const removeHandler = (videoId: string) => {
+		if (confirm('Вы действительно хотите удалить?')) {
+			mutate(videoId)
+		}
+	}
+
 	return (
 		<Meta title='Youtube v2.0 - Studio'>
 			<div className='bg-gray-100 p-7'>
 				<StudioItem>
 					{isLoading ? (
 						<SkeletonLoader count={5} />
+					) : data?.length ? (
+						<Recommended newVideos={data || []} removeHandler={removeHandler} isUpdateLink />
 					) : (
-						<Recommended newVideos={data || []} removeHandler={mutate} />
+						<p>Videos not found!</p>
 					)}
 				</StudioItem>
 			</div>

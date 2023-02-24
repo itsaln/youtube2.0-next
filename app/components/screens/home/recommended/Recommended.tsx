@@ -9,9 +9,14 @@ import styles from './Recommended.module.scss'
 interface IRecommended {
 	newVideos: IVideo[]
 	removeHandler?: (videoId: string) => void
+	isUpdateLink?: boolean
 }
 
-const Recommended: FC<IRecommended> = ({ newVideos, removeHandler }) => {
+const Recommended: FC<IRecommended> = ({
+	newVideos,
+	removeHandler,
+	isUpdateLink
+}) => {
 	return (
 		<div id='recommended'>
 			<div className={styles.top_block}>
@@ -28,6 +33,7 @@ const Recommended: FC<IRecommended> = ({ newVideos, removeHandler }) => {
 						item={video}
 						isAvatar
 						removeHandler={removeHandler}
+						isUpdateLink={isUpdateLink}
 					/>
 				))}
 			</div>

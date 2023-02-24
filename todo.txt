@@ -14,12 +14,12 @@
 [x] - Save button and upload video
 
 [x] - Channel page
-[] - Video page
- [] - Player
- [] - Comment
- [] - Likes, views
+[x] - Video page
+ [x] - Player
+ [x] - Comment
+ [x] - Likes, views
 
-[] - Studio
- [] - List videos
- [] - Update video
- [] - Remove video
+[x] - Studio
+ [x] - List videos
+ [x] - Update video
+ [x] - Remove video
