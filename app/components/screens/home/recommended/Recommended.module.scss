@@ -1,5 +1,9 @@
 @import '../../../../assets/styles/variables';
 
+.recommended {
+  padding: 0 $gutter40;
+}
+
 .top_block {
   @apply flex items-center justify-between mb-5;
 

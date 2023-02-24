@@ -1,8 +1,7 @@
 @import '../../../../assets/styles/variables';
 
 .search_top {
-  @apply relative mx-auto;
-  max-width: 400px;
+  @apply relative mx-auto max-w-[400px];
 
   > label {
     @apply relative block;
@@ -13,8 +12,7 @@
       transition: box-shadow .4s ease;
 
       &::placeholder {
-        @apply italic opacity-80;
-        color: $gray;
+        @apply italic text-gray-400 opacity-80;
       }
 
       &:focus {
@@ -23,10 +21,7 @@
     }
 
     img {
-      @apply absolute right-4;
-      top: 50%;
-      transform: translateY(-50%);
-      max-width: 18px;
+      @apply absolute max-w-[18px] top-[50%] right-4 -translate-y-[50%];
     }
   }
 

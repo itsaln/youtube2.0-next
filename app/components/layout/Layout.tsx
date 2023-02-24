@@ -6,6 +6,8 @@ import Header from '@/layout/header/Header'
 
 import { useAuth } from '@/hooks/useAuth'
 
+import styles from './Layout.module.scss'
+
 const DynamicSidebar = dynamic(() => import('@/layout/sidebar/Sidebar'), {
 	ssr: false
 })
@@ -23,7 +25,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	}, [user])
 
 	return (
-		<main id='youtube_main'>
+		<main className={styles.youtube_main}>
 			<DynamicSidebar />
 
 			<section
@@ -32,7 +34,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 				})}
 			>
 				<Header />
-				<div className='content-wrapper'>{children}</div>
+				<div className={styles.wrapper_content}>{children}</div>
 			</section>
 		</main>
 	)

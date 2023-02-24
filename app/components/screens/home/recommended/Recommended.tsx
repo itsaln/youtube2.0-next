@@ -18,7 +18,7 @@ const Recommended: FC<IRecommended> = ({
 	isUpdateLink
 }) => {
 	return (
-		<div id='recommended'>
+		<div className={styles.recommended}>
 			<div className={styles.top_block}>
 				<div className='left_title title_gray'>
 					<h2>Newest video</h2>

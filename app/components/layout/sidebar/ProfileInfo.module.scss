@@ -12,8 +12,7 @@
   }
 
   > .location {
-    @apply text-base;
-    color: $gray;
+    @apply text-base text-gray-400;
   }
 }
 
@@ -28,8 +27,7 @@
     }
 
     > .bottom {
-      @apply text-sm uppercase mt-1;
-      color: $gray;
+      @apply text-sm text-gray-400 uppercase mt-1;
     }
   }
 }

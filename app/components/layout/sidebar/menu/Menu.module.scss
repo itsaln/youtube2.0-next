@@ -1,0 +1,31 @@
+.mnu_sidebar {
+  @apply list-none;
+
+  > li {
+    @apply block mb-[39.4px] last:mb-0;
+
+    > a {
+      @apply relative flex items-center font-medium text-black px-[24px];
+
+      > img {
+        @apply block max-w-[24px] h-auto mr-[16px];
+      }
+
+      > b {
+        @apply font-normal;
+      }
+
+      > span.number {
+        @apply text-primary ml-[20px];
+      }
+
+      &::before {
+        @apply content-[''] absolute w-[3px] h-full rounded-[10px] bg-primary top-0 -left-[25px] opacity-0;
+      }
+
+      &:hover::before {
+        @apply opacity-100;
+      }
+    }
+  }
+}

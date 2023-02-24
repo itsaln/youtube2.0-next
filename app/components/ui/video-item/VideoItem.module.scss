@@ -46,8 +46,7 @@
   }
 
   .author {
-    @apply inline-block text-sm mt-2;
-    color: $gray;
+    @apply inline-block text-gray-400 text-sm mt-2;
   }
 
   .name {
@@ -55,8 +54,7 @@
   }
 
   .description {
-    @apply truncate-4 mb-5;
-    color: $gray;
+    @apply text-gray-400 truncate-4 mb-5;
   }
 }
 
@@ -64,8 +62,7 @@
   @apply flex items-center justify-between;
 
   > div {
-    @apply text-sm uppercase font-semibold mx-4 first:ml-0;
-    color: $gray;
+    @apply text-sm text-gray-400 uppercase font-semibold mx-4 first:ml-0;
 
     &.subscribers {
       @apply text-primary;

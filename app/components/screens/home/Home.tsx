@@ -20,31 +20,29 @@ const Home: FC<IHome> = ({
 }) => {
 	return (
 		<Meta title='Youtube v2.0 - Best video'>
-			<div id='wrapper_content'>
-				<div className='left_side'>
-					{!!weeklyVideos.length && !!randomVideo ? (
-						<WeeklyFeatured
-							weeklyVideos={weeklyVideos}
-							randomVideo={randomVideo}
-						/>
-					) : (
-						<div className='font-bold text-danger'>Not found!</div>
-					)}
-
-					<Line />
-
-					{!!newVideos.length ? (
-						<Recommended newVideos={newVideos} />
-					) : (
-						<div className='font-bold text-danger'>New videos not found!</div>
-					)}
-				</div>
-				{!!topVideo && !!topChannels.length ? (
-					<RightSide topVideo={topVideo} topChannels={topChannels} />
+			<div className='left_side'>
+				{!!weeklyVideos.length && !!randomVideo ? (
+					<WeeklyFeatured
+						weeklyVideos={weeklyVideos}
+						randomVideo={randomVideo}
+					/>
 				) : (
-					<div className='font-bold text-danger'>Top videos not found!</div>
+					<div className='font-bold text-danger'>Not found!</div>
+				)}
+
+				<Line />
+
+				{!!newVideos.length ? (
+					<Recommended newVideos={newVideos} />
+				) : (
+					<div className='font-bold text-danger'>New videos not found!</div>
 				)}
 			</div>
+			{!!topVideo && !!topChannels.length ? (
+				<RightSide topVideo={topVideo} topChannels={topChannels} />
+			) : (
+				<div className='font-bold text-danger'>Top videos not found!</div>
+			)}
 		</Meta>
 	)
 }

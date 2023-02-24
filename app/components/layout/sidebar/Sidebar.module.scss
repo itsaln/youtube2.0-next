@@ -1,0 +1,15 @@
+.sidebar {
+  @apply w-[16%] bg-[#F8F8F8] py-[20px];
+
+  > .logo {
+    @apply block mb-[30px] mr-[12px];
+  }
+
+  .logout_btn {
+    @apply block text-[18px] font-medium text-black mb-[40px] ml-[20px];
+  }
+
+  .copy {
+    @apply text-gray-400 ml-[20px];
+  }
+}

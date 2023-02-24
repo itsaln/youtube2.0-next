@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
 import Search from './search/Search'
+import styles from './Header.module.scss'
 
 const DynamicIconsRight = dynamic(() => import('./icons/IconsRight'), {
 	ssr: false
@@ -9,7 +10,7 @@ const DynamicIconsRight = dynamic(() => import('./icons/IconsRight'), {
 
 const Header: FC = () => {
 	return (
-		<header id='header'>
+		<header className={styles.header}>
 			<Search />
 			<DynamicIconsRight />
 		</header>

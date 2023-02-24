@@ -15,8 +15,7 @@
     }
 
     > .location {
-      @apply text-sm text-left;
-      color: $gray;
+      @apply text-sm text-gray-400 text-left;
     }
   }
 }

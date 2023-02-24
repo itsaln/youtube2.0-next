@@ -5,7 +5,6 @@ import MainProvider from '@/providers/MainProvider'
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
 import '@/assets/styles/globals.scss'
-import '@/assets/styles/main.scss'
 
 type TypeAppProps = AppProps & TypeComponentAuthFields
 

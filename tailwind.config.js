@@ -9,7 +9,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#f00'
+				primary: '#f00',
+				black: '#111'
 			},
 			keyframes: {
 				fade: {

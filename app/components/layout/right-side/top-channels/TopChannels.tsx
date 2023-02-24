@@ -6,7 +6,7 @@ import { IUser } from '@/shared/types/user.types'
 
 const TopChannels: FC<{ channels: IUser[] }> = ({ channels }) => {
 	return (
-		<div id='top_channels'>
+		<div className='top_channels'>
 			<div className='title_gray'>
 				<h2>Top Channels</h2>
 			</div>

@@ -11,6 +11,8 @@ import Line from '@/ui/Line'
 import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
+import styles from './Sidebar.module.scss'
+
 const Sidebar: FC = () => {
 	const { user } = useAuth()
 	const { push } = useRouter()
@@ -23,8 +25,8 @@ const Sidebar: FC = () => {
 	}
 
 	return user ? (
-		<div className='sidebar'>
-			<Link href='/' className='logo'>
+		<div className={styles.sidebar}>
+			<Link href='/' className={styles.logo}>
 				<Image
 					width={130}
 					height={42}
@@ -47,10 +49,10 @@ const Sidebar: FC = () => {
 			{/*	<p>Light On</p>*/}
 			{/*</div>*/}
 
-			<button id='logout_btn' onClick={handleLogout}>
+			<button className={styles.logout_btn} onClick={handleLogout}>
 				Logout
 			</button>
-			<p className='copy'>&copy; 2023 Youtube, LLC</p>
+			<p className={styles.copy}>&copy; 2023 Youtube, LLC</p>
 		</div>
 	) : null
 }

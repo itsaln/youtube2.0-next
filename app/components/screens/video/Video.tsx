@@ -32,13 +32,11 @@ const Video: FC<IVideoPage> = ({ video }) => {
 		<Meta title={video.name}>
 			<div>
 				<VideoPlayer videoPath={video.videoPath} />
-				<div id='wrapper_content'>
-					<div className='left_side'>
-						<VideoDetail video={video} channel={video.user || ({} as IUser)} />
-					</div>
-					<div className='right_side'>
-						<DynamicComments videoId={video._id} />
-					</div>
+				<div className='left_side'>
+					<VideoDetail video={video} channel={video.user || ({} as IUser)} />
+				</div>
+				<div className='right_side'>
+					<DynamicComments videoId={video._id} />
 				</div>
 			</div>
 		</Meta>

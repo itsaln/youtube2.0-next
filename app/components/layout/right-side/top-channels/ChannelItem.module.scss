@@ -18,8 +18,7 @@
       }
 
       .subs {
-        color: $gray;
-        margin-top: 5px;
+        @apply text-gray-400 mt-[5px];
       }
     }
   }
@@ -28,7 +27,7 @@
     @apply no-underline;
 
     > img {
-      max-width: 20px;
+      @apply max-w-[20px];
     }
   }
 }

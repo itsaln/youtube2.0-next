@@ -39,7 +39,7 @@ export const menu: IMenuItem[] = [
 	{
 		title: 'Settings',
 		image: '/img/common/adjust.svg',
-		link: '/videos'
+		link: '/studio'
 	},
 	{
 		title: 'Help & Report',

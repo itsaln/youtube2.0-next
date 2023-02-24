@@ -1,19 +1,15 @@
-$gray: #797979;
-
 .editor {
   @apply relative block mb-4;
 
   > textarea {
-    @apply w-full text-base border-b resize-none py-2;
-    min-height: 200px;
+    @apply w-full min-h-[200px] text-base border-b resize-none py-2;
 
     &::placeholder {
-      color: $gray;
+      @apply text-gray-400;
     }
   }
 }
 
 .error {
   @apply absolute -bottom-5 left-0 text-sm w-full text-primary;
-  font-size: 0.65rem;
 }

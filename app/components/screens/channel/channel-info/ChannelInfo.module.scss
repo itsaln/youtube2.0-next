@@ -15,13 +15,11 @@
     }
 
     > .location {
-      @apply text-base text-left;
-      color: $gray;
+      @apply text-base text-gray-400 text-left;
     }
   }
 }
 
 .article {
-  @apply text-base my-4;
-  color: $gray;
+  @apply text-base text-gray-400 my-4;
 }

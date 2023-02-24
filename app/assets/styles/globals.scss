@@ -3,20 +3,129 @@
 @tailwind utilities;
 
 @import '~react-redux-toastr/src/styles/index';
+@import 'variables';
+@import 'fonts';
 
-html,
+* {
+  @apply box-border;
+
+  &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+    @apply text-[#c0c0c0] opacity-100;
+  }
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Helvetica, Neue, sans-serif;
+  @apply relative text-black leading-7;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  @apply text-[inherit] decoration-[none] transition-colors hover:text-primary;
 }
 
-* {
-  box-sizing: border-box;
+.content {
+  @apply w-[84%];
+
+  &.content-full {
+    @apply w-full;
+  }
+}
+
+.left_side, .right_side {
+  > .line {
+    @apply w-full h-[1px] mx-[24px];
+    background-color: $light_gray;
+  }
+}
+
+.left_side {
+  @apply w-[75%];
+  padding: $gutter40 0;
+  border-right: 1px solid $light_gray;
+
+  .weekly_featured {
+    @apply flex flex-wrap;
+    padding: 0 $gutter40;
+
+    > .info_wf {
+      @apply w-[50%] pl-[15px];
+
+      > .sub_name {
+        @apply text-[18px];
+      }
+
+      > h1 {
+        @apply text-[24px] font-semibold my-[20px];
+      }
+
+      > .description {
+        @apply text-gray-400 mb-[20px];
+      }
+    }
+
+    > .top_video {
+      @apply w-[50%] pl-[15px];
+    }
+  }
+}
+
+.right_side {
+  @apply relative w-[25%];
+  padding: $gutter40;
+
+  .video_hot_item {
+    @apply mt-[25px];
+  }
+
+  .top_channels {
+    .title_gray {
+      @apply mb-[16px];
+    }
+
+    .list_channels {}
+  }
+}
+
+.title_gray {
+  @apply flex items-center;
+
+  > h2 {
+    @apply text-[20px] mr-[20px];
+  }
+
+  > .show-more {
+    @apply text-gray-400 cursor-pointer;
+  }
+}
+
+.verified {
+  &::after {
+    @apply content-[''] inline-block w-4 h-4 bg-no-repeat bg-center bg-cover ml-2.5 opacity-80;
+    background-image: url('/img/common/correct.svg');
+  }
+}
+
+.custom-scroll {
+  @apply overflow-y-auto;
+
+  &::-webkit-scrollbar {
+    @apply w-1.5 h-1;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary bg-opacity-50;
+  }
+  &::-webkit-scrollbar-track {
+    @apply bg-primary bg-opacity-10;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      @apply bg-opacity-60;
+    }
+    &::-webkit-scrollbar-track {}
+  }
+}
+
+.line {
+  @apply my-[32px] mx-auto h-[1px] bg-gray-400 opacity-40;
 }
