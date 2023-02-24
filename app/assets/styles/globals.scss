@@ -7,7 +7,7 @@
 @import 'fonts';
 
 * {
-  @apply box-border;
+  @apply box-border outline-none;
 
   &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
     @apply text-[#c0c0c0] opacity-100;
@@ -24,7 +24,7 @@ a {
 }
 
 .content {
-  @apply w-[84%];
+  @apply w-[84%] min-h-screen max-h-screen overflow-y-auto;
 
   &.content-full {
     @apply w-full;
@@ -42,48 +42,11 @@ a {
   @apply w-[75%];
   padding: $gutter40 0;
   border-right: 1px solid $light_gray;
-
-  .weekly_featured {
-    @apply flex flex-wrap;
-    padding: 0 $gutter40;
-
-    > .info_wf {
-      @apply w-[50%] pl-[15px];
-
-      > .sub_name {
-        @apply text-[18px];
-      }
-
-      > h1 {
-        @apply text-[24px] font-semibold my-[20px];
-      }
-
-      > .description {
-        @apply text-gray-400 mb-[20px];
-      }
-    }
-
-    > .top_video {
-      @apply w-[50%] pl-[15px];
-    }
-  }
 }
 
 .right_side {
   @apply relative w-[25%];
   padding: $gutter40;
-
-  .video_hot_item {
-    @apply mt-[25px];
-  }
-
-  .top_channels {
-    .title_gray {
-      @apply mb-[16px];
-    }
-
-    .list_channels {}
-  }
 }
 
 .title_gray {
@@ -109,10 +72,10 @@ a {
   @apply overflow-y-auto;
 
   &::-webkit-scrollbar {
-    @apply w-1.5 h-1;
+    @apply w-1 h-1;
   }
   &::-webkit-scrollbar-thumb {
-    @apply bg-primary bg-opacity-50;
+    @apply bg-primary bg-opacity-20;
   }
   &::-webkit-scrollbar-track {
     @apply bg-primary bg-opacity-10;
@@ -120,9 +83,8 @@ a {
 
   &:hover {
     &::-webkit-scrollbar-thumb {
-      @apply bg-opacity-60;
+      @apply bg-opacity-30;
     }
-    &::-webkit-scrollbar-track {}
   }
 }
 

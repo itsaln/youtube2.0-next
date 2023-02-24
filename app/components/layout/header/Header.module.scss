@@ -1,6 +1,6 @@
 @import '../../../assets/styles/variables';
 
 .header {
-  @apply relative py-[15px] px-[25px];
+  @apply sticky top-0 bg-white py-[15px] px-[25px] z-10;
   border-bottom: 1px solid $light_gray;
 }

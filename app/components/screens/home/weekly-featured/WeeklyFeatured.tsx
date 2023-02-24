@@ -1,10 +1,12 @@
-import Image from 'next/image'
 import { FC } from 'react'
 
 import Slider from '@/screens/home/weekly-featured/Slider'
 
-import { IVideo } from '@/shared/types/video.types'
 import VideoItem from '@/ui/video-item/VideoItem'
+
+import { IVideo } from '@/shared/types/video.types'
+
+import styles from './WeeklyFeatured.module.scss'
 
 interface IWeeklyFeatured {
 	weeklyVideos: IVideo[]
@@ -13,11 +15,11 @@ interface IWeeklyFeatured {
 
 const WeeklyFeatured: FC<IWeeklyFeatured> = ({ weeklyVideos, randomVideo }) => {
 	return (
-		<div className='weekly_featured'>
-			<div className='info_wf'>
-				<div className='sub_name'>Weekly Featured</div>
+		<div className={styles.weekly_featured}>
+			<div className={styles.info_wf}>
+				<div className={styles.sub_name}>Weekly Featured</div>
 				<h1>Hello, Summer Vacation!</h1>
-				<div className='description'>
+				<div className={styles.description}>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
 					harum placeat ullam vel non, quisquam totam, doloremque expedita odit
 					consectetur minima vitae. Facilis nostrum cumque illum fugit rem, nam
@@ -26,7 +28,7 @@ const WeeklyFeatured: FC<IWeeklyFeatured> = ({ weeklyVideos, randomVideo }) => {
 				<Slider videos={weeklyVideos} />
 			</div>
 
-			<div className='top_video'>
+			<div className={styles.top_video}>
 				<VideoItem item={randomVideo} isLarge={true} isAvatar={true} />
 			</div>
 		</div>

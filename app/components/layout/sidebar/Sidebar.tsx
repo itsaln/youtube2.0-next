@@ -12,6 +12,7 @@ import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
 import styles from './Sidebar.module.scss'
+import cn from 'clsx'
 
 const Sidebar: FC = () => {
 	const { user } = useAuth()
@@ -25,15 +26,17 @@ const Sidebar: FC = () => {
 	}
 
 	return user ? (
-		<div className={styles.sidebar}>
-			<Link href='/' className={styles.logo}>
-				<Image
-					width={130}
-					height={42}
-					src='/img/common/logo.png'
-					alt='Youtube'
-				/>
-			</Link>
+		<div className={cn(styles.sidebar, 'custom-scroll')}>
+			<div className={styles.logo}>
+				<Link href='/'>
+					<Image
+						width={156}
+						height={50}
+						src='/img/common/logo.png'
+						alt='Youtube'
+					/>
+				</Link>
+			</div>
 
 			<ProfileInfo />
 

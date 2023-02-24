@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/variables';
+
+.weekly_featured {
+  @apply flex flex-wrap;
+  padding: 0 $gutter40;
+
+  .info_wf {
+    @apply w-[50%] pl-[15px];
+
+    > .sub_name {
+      @apply text-[18px];
+    }
+
+    > h1 {
+      @apply text-[24px] font-semibold my-[20px];
+    }
+
+    > .description {
+      @apply text-gray-400 mb-[20px];
+    }
+  }
+
+  .top_video {
+    @apply w-[50%] pl-[15px];
+  }
+}

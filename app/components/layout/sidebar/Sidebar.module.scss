@@ -1,8 +1,12 @@
 .sidebar {
-  @apply w-[16%] bg-[#F8F8F8] py-[20px];
+  @apply w-[16%] min-h-screen max-h-screen bg-[#F8F8F8] py-[20px];
 
-  > .logo {
-    @apply block mb-[30px] mr-[12px];
+  .logo {
+    @apply mb-6 px-6;
+
+    > a {
+      @apply inline-block;
+    }
   }
 
   .logout_btn {

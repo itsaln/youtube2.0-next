@@ -1,24 +1,12 @@
-export const nFormatter = (
-	number: number,
-	type: 'lowercase' | 'uppercase' = 'lowercase'
-) => {
+export const nFormatter = (number: number) => {
 	if (number >= 1000000000)
-		return (
-			(number / 1000000000).toFixed(1).replace(/\.0$/, '') +
-			`${type === 'uppercase' ? 'G' : 'g'}`
-		)
+		return (number / 1000000000).toFixed(1).replace(/\.0$/, '') + 'g'
 
 	if (number >= 1000000)
-		return (
-			(number / 1000000).toFixed(1).replace(/\.0$/, '') +
-			`${type === 'uppercase' ? 'M' : 'm'}`
-		)
+		return (number / 1000000).toFixed(1).replace(/\.0$/, '') + 'm'
 
 	if (number >= 1000)
-		return (
-			(number / 1000).toFixed(1).replace(/\.0$/, '') +
-			`${type === 'uppercase' ? 'K' : 'k'}`
-		)
+		return (number / 1000).toFixed(1).replace(/\.0$/, '') + 'k'
 
 	return number
 }

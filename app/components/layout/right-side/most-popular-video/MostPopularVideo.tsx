@@ -5,7 +5,7 @@ import VideoItem from '@/ui/video-item/VideoItem'
 
 const MostPopularVideo: FC<{ video: IVideo }> = ({ video }) => {
 	return (
-		<div id='hot'>
+		<div className='hot'>
 			<div className='title_gray mb-5'>
 				<h2>Top video</h2>
 			</div>

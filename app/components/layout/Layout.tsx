@@ -34,7 +34,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 				})}
 			>
 				<Header />
-				<div className={styles.wrapper_content}>{children}</div>
+				<div className={cn(styles.wrapper_content, '')}>{children}</div>
 			</section>
 		</main>
 	)
