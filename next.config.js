@@ -13,8 +13,8 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				// destination: 'http://localhost:5000/:path*'
-				destination: 'https://youtube2-0-api-kcg0.onrender.com/:path*'
+				// destination: 'http://localhost:5000/api/:path*'
+				destination: 'https://youtube2-0-api-kcg0.onrender.com/api/:path*'
 			},
 			{
 				source: '/uploads/:path*',
