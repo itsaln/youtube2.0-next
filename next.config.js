@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// reactStrictMode: true,
+	reactStrictMode: true,
 	swcMinify: true,
 	poweredByHeader: false,
 	optimizeFonts: false,
@@ -13,10 +13,12 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
+				// destination: 'http://localhost:5000/:path*'
 				destination: 'https://youtube2-0-api-kcg0.onrender.com/:path*'
 			},
 			{
 				source: '/uploads/:path*',
+				// destination: 'http://localhost:5000/uploads/:path*'
 				destination: 'https://youtube2-0-api-kcg0.onrender.com/uploads/:path*'
 			}
 		]
