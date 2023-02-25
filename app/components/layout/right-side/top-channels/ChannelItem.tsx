@@ -28,7 +28,7 @@ const ChannelItem: FC<{ item: IUser }> = ({ item }) => {
 						{item.name}
 					</Link>
 					<div className={styles.subs}>
-						{nFormatter(item.subscribersCount)} Subscribers
+						<span className='uppercase'>{nFormatter(item.subscribersCount)}</span> Subscribers
 					</div>
 				</div>
 			</div>
